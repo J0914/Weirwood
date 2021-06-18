@@ -1,0 +1,20 @@
+p {
+    font-size: 1.5em;
+    margin-bottom: 2px;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 1px;
+    background-color: #ebebeb;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
+    padding: 10px;
+    margin: 5px;
+}
+
+#logout {
+    height: 30px;
+    width: 100%;
+    font-size: 1em;
+}
+

@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+// backend/bin/www
+const { port } = require('../config');
+
+const app = require('../app');
+const db = require('../db/models');
+
+// Check the database connection before starting the app
+db.sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Hello Creator, I am connected to the database. :)');
+
+const randomWord = () => {
+    const words = [
+    'amazing',
+    'intelligent',
+    'kind',
+    'brave',
+    'determined',
+    'motivated',
+    'independent',
+    'resourceful',
+    'clever',
+    'hard-working'
+    ]
+    const random = Math.floor(Math.random() * 10)
+    const magicWord = words[random];
+    return magicWord
+}
+
+    // Start listening for connections
+    app.listen(port, () => console.log(`*** Wow, you are ${randomWord()}. Port ${port} is now live and ready to go! :D`));
+  })
+  .catch((err) => {
+    console.log('I am sorry Creator, but I am unable to connect to the database. :( ');
+    console.error(err);
+  });
