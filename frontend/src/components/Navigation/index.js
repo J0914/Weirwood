@@ -11,25 +11,23 @@ const Navigation = ({ isLoaded }) => {
     return (
         <div className='nav-container'>
             <nav className='nav'>
-            <ol>
                 <span className='homeSpan'>
-                <p> Godswood </p>
-                <NavLink exact to='/' className='navLink' activeClassName='active-nav'>Home</NavLink>
+                <p id='site-name'> Weirwood </p>
                 </span>
                 <span className='authSpan'>
                 {isLoaded && user ? 
                 <>
+                <NavLink exact to='/' id = 'home' className='navLink' activeClassName='active-nav'>Home</NavLink>
                 <ProfileButton user={user} /> 
                 </>
                 :
                 <>
-                <NavLink to='/signup' className='navLink' activeClassName='active-nav'>Create Account</NavLink>
-                <NavLink to='/login' className='navLink' activeClassName='active-nav'>Log In</NavLink> 
+                <NavLink exact to='/' id = 'home' className='navLink' activeClassName='active-nav'>Home</NavLink>
+                <NavLink to='/login' id='login' className='navLink' activeClassName='active-nav'>Log In</NavLink> 
+                <NavLink to='/signup' id='signup' className='navLink' activeClassName='active-nav'>Create Account</NavLink>
                 </>
                 }
                 </span>
-                
-            </ol>
             </nav>
         </div>
     );

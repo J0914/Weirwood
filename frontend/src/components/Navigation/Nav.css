@@ -1,5 +1,6 @@
 nav {
     width: 100%;
+    position: fixed;
 }
 
 ol {
@@ -23,7 +24,30 @@ p {
     margin: 0 3px;
 }
 
+#site-name{
+        display: grid;
+        grid-area: name;
+    }
+
+    #home {
+        display: grid;
+        grid-area: home;
+    }
+
+    #signup {
+        display: grid;
+        grid-area: signup;
+        white-space: nowrap;
+    }
+
+    #login {
+        display: grid;
+        grid-area: login;
+        white-space: nowrap;
+    }
+
 .nav {
+    height: 75px;
     display: flex;
     /* padding: 20px; */
     justify-content: space-between;
@@ -70,4 +94,60 @@ p {
 
 .active-nav {
     background-color: #ab2a3c;
+}
+
+
+
+@media screen and (max-width: 840px) {
+
+    .homeSpan {
+        grid-area: home;
+    }
+
+    .authSpan {
+        grid-area: auth;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: row;
+    }
+
+    .homeSpan, .authSpan {
+        height: 60px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #site-name {
+        font-size: 3em;
+        margin-right: 30px;
+    }
+
+    #home {
+        height: 50px;
+        width: auto;
+        font-size: 2em;
+    }
+
+    #signup {
+        height: 50px;
+        width: auto;
+        font-size: 2em;
+    }
+
+    #login {
+        height: 50px;
+        width: auto;
+        font-size: 2em;
+    }
+    .nav {
+        margin: 0;
+        height: 150px;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        'home ' ' auth';
+    }
 }
