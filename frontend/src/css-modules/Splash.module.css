@@ -1,4 +1,4 @@
-h1 {
+#splashH1 {
     grid-area: h1;
     position: relative;
     top: 0px;
@@ -12,7 +12,7 @@ h1 {
     white-space: nowrap;
 }
 
-#welcome-msg {
+#welcomeMsg {
     text-align:left;
     font-size: 1.7em;
     width: 800px;
@@ -31,14 +31,18 @@ h1 {
     grid-area: foot;
 }
 
-.splash-body {
+#test {
+    grid-area: test;
+}
+
+.splashBody {
     display: grid; 
     grid-template-rows: 120px 120px 65%;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas: 
     '. h1 .'
     '. p .'
-    '. . .';
+    '. test .';
     justify-items: center;
     /* align-items: center; */
     flex-direction: column;
@@ -51,11 +55,11 @@ h1 {
 
 @media screen and (max-width: 840px) {
     
-    #welcome-msg {
+    #welcomeMsg {
         width: 500px;
     }
 
-    h1 {
+    #splashH1 {
         grid-area: h1;
         position: relative;
         top: 0px;
@@ -69,14 +73,14 @@ h1 {
         border-bottom: 1px solid black;
     }
 
-    .splash-body {
+    .splashBody {
         display: grid; 
         grid-template-rows: 120px 120px auto;
         grid-template-columns: 1fr 4fr 1fr;
         grid-template-areas: 
         '. h1 .'
         '. p .'
-        '. . .';
+        '. test .';
         justify-items: center;
         /* align-items: center; */
         flex-direction: column;

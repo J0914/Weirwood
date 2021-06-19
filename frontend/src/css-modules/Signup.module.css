@@ -9,9 +9,9 @@ body {
 input {
     width: 95%;
     border: none;
-    border-bottom: 1px solid #6b6b6b;
+    borderBottom: 1px solid #6b6b6b;
     margin: 3px;
-    margin-bottom: 10px;
+    marginBottom: 10px;
     margin-top: 0;
     height: 30px;
 }
@@ -38,14 +38,14 @@ li {
 .header {
     text-align: center;
     position: relative;
-    top: -80px;
+    top: -30px;
     padding: 20px 0px;
     margin-top: 0;
-    margin-bottom: 40px;
-    padding: 5px;
+    marginBottom: 60px;
+    padding: 1px;
 }
 
-.form-div {
+.formDiv {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 20% 60% 20%;
@@ -67,7 +67,7 @@ li {
     border-radius: 3px;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: borderBox;
     border-radius: 5px;
     width: 650px;
     height: 650px;
@@ -85,7 +85,7 @@ li {
     width: 450px;
 }
 
-.submit-btn {
+.submitBtn {
     width: 75%;
     background-color: #ce3a4e;
     color: white;
@@ -102,13 +102,13 @@ li {
     
     flex-wrap: wrap;
     width: 350px;
-    box-sizing: border-box;
+    box-sizing: borderBox;
     justify-content: flex-start;
-    padding-bottom: 30px;
+    paddingBottom: 30px;
 }
 
-@media screen and (max-width: 769px) {
-    .form-div {
+@media screen and (max-width: 840px) {
+    .formDiv {
         top: 150px;
     }
 

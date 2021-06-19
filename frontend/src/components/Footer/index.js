@@ -1,14 +1,13 @@
 import React from 'react';
 
-import './Footer.css'
+import styles from '../../css-modules/Footer.module.css'
 
 const Footer = () => {
 
 
     return (
-        <footer className='footer'>
+        <footer className={styles.footer}>
             <p> Created by: Jordyn Sechrist </p>
-
         </footer>
     )
 }

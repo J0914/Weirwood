@@ -24,7 +24,7 @@ p {
     margin: 0 3px;
 }
 
-#site-name{
+#siteName{
         display: grid;
         grid-area: name;
     }
@@ -55,7 +55,7 @@ p {
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
 }
 
-.nav-container {
+.navContainer {
     width: 100%;
     
 }
@@ -92,7 +92,7 @@ p {
     align-items: center;
 }
 
-.active-nav {
+.activeNav {
     background-color: #ab2a3c;
 }
 
@@ -117,7 +117,7 @@ p {
         justify-content: center;
     }
 
-    #site-name {
+    #siteName {
         font-size: 3em;
         margin-right: 30px;
     }

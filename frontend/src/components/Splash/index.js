@@ -1,19 +1,17 @@
 import React from 'react';
-import './Splash.css'
+import styles from '../../css-modules/Signup.module.css'
 
 const Splash = () => {
 
     return (
         <>
-        <div className='splash-body'>
-            <h1 id='splash-h1'> Winter is coming! </h1>
-                <div id='welcome'>
-                    <p id='welcome-msg'>Make the Most of the long summer before the white ravens fly!</p>
-                </div>
-        </div>
-        <div className='spots-container'>
-            
-        </div>
+        <div className={styles.splashBody}>
+            <h1 id={styles.splashH1}> Winter is coming! </h1>
+            <div id={styles.welcome}>
+                <p id={styles.welcomeMsg}>Make the Most of the long summer before the white ravens fly!</p>
+            </div>
+            <h1 id={styles.test}> Hi </h1> 
+        </div>   
         </>
     );
 }

@@ -3,7 +3,7 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import './Signup.css';
+import styles from '../../css-modules/Signup.module.css'
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -31,17 +31,17 @@ function SignupFormPage() {
   }
 
   return (
-    <div className='form-div'>
-        <form className='form' onSubmit={handleSubmit}>
-        <h1 className='header'>Create Account!</h1>
+    <div className={styles.formDiv}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+        <h1 className={styles.header}>Create Account!</h1>
         {errors.length ? 
-        <div className='errors'>
+        <div className={styles.errors}>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
         </div> : null
         }
-        <div className='inputs'>
+        <div className={styles.inputs}>
         <label>
                 Email:
             </label>
@@ -79,7 +79,7 @@ function SignupFormPage() {
             required
             />
         </div>
-        <button className='submit-btn' type="submit">Sign Up</button>
+        <button className={styles.submitBtn} type="submit">Sign Up</button>
         </form>
     </div>
   );

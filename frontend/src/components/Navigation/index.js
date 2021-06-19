@@ -3,28 +3,28 @@ import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import ProfileButton from './ProfileButton'
 
-import './Nav.css';
+import styles from '../../css-modules/Nav.module.css'
 
 const Navigation = ({ isLoaded }) => {
     const user = useSelector((state) => state.session.user)
     
     return (
-        <div className='nav-container'>
-            <nav className='nav'>
-                <span className='homeSpan'>
-                <p id='site-name'> Weirwood </p>
+        <div className={styles.navContainer}>
+            <nav className={styles.nav}>
+                <span className={styles.homeSpan}>
+                <p id={styles.siteName}> Weirwood </p>
                 </span>
-                <span className='authSpan'>
+                <span className={styles.authSpan}>
                 {isLoaded && user ? 
                 <>
-                <NavLink exact to='/' id = 'home' className='navLink' activeClassName='active-nav'>Home</NavLink>
+                <NavLink exact to='/' id = {styles.home} className={styles.navLink} activeClassName={styles.activeNav}>Home</NavLink>
                 <ProfileButton user={user} /> 
                 </>
                 :
                 <>
-                <NavLink exact to='/' id = 'home' className='navLink' activeClassName='active-nav'>Home</NavLink>
-                <NavLink to='/login' id='login' className='navLink' activeClassName='active-nav'>Log In</NavLink> 
-                <NavLink to='/signup' id='signup' className='navLink' activeClassName='active-nav'>Create Account</NavLink>
+                <NavLink exact to='/' id = {styles.home} className={styles.navLink} activeClassName={styles.activeNav}>Home</NavLink>
+                <NavLink to='/login' id={styles.login} className={styles.navLink} activeClassName={styles.activeNav}>Log In</NavLink> 
+                <NavLink to='/signup' id={styles.signup} className={styles.navLink} activeClassName={styles.activeNav}>Create Account</NavLink>
                 </>
                 }
                 </span>
