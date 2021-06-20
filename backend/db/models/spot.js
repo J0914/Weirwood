@@ -3,19 +3,19 @@ module.exports = (sequelize, DataTypes) => {
   const Spot = sequelize.define('Spot', {
     userId: {
       allowNull: false,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     title: {
       allowNull: false,
-      type: Sequelize.STRING(80)
+      type: DataTypes.STRING(80)
     },
     location: {
       allowNull: false,
-      type: Sequelize.STRING(100)
+      type: DataTypes.STRING(100)
     },
     description: {
       allowNull: false,
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
   }, {});
   Spot.associate = function(models) {
