@@ -71,9 +71,9 @@ li {
     border-radius: 5px;
     width: 650px;
     height: 650px;
-    padding: 50px;
     margin: 75px;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
+    background-color: rgb(204, 204, 204);
 }
 
 .inputs {

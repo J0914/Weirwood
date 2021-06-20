@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from '../../css-modules/Signup.module.css'
+import Spot from '../Spot'
+import styles from '../../css-modules/Splash.module.css'
 
 const Splash = () => {
 
@@ -10,7 +11,9 @@ const Splash = () => {
             <div id={styles.welcome}>
                 <p id={styles.welcomeMsg}>Make the Most of the long summer before the white ravens fly!</p>
             </div>
-            <h1 id={styles.test}> Hi </h1> 
+            <div id={styles.test}> 
+            <Spot />
+            </div> 
         </div>   
         </>
     );

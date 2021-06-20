@@ -9,16 +9,20 @@ label {
     border-top: 1px solid black; */
     background-color: #ebebeb;
     color: #310d12;
+    display: flex;
+    
 }
 
 .profileDropdown {
     position: absolute;
+    z-index: 3;
     right: 1px;
     background-color: #ebebeb;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
     padding: 10px;
     margin: 5px;
     font-size: .8em;
+    width: 250px;
 }
 
 #logout {
@@ -26,4 +30,21 @@ label {
     width: 100%;
     font-size: 1em;
 }
+
+#btn {
+    height: 60px;
+    width: 60px;
+    font-size: 2em;
+}
+
+@media screen and (max-width: 960px) {
+    #btn {
+        height: 75px;
+        width: 75px;
+        font-size: 3em;
+    }
+
+}
+
+
 

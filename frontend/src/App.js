@@ -8,6 +8,8 @@ import Splash from "./components/Splash"
 import Footer from "./components/Footer"
 import * as sessionActions from "./store/session";
 
+import './index.css'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
