@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Spot.associate = function(models) {
-    // associations can be defined here
+    Spot.hasMany(models.Image, { foreignKey: 'spotId' })
   };
   return Spot;
 };

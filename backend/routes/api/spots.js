@@ -27,7 +27,9 @@ const validateImage = [
 ]
 
 router.get('/', asyncHandler(async (req,res) => {
-    const spots = await db.Spot.findAll();
+    const spots = await db.Spot.findAll({
+      include: db.Image
+    });
     return res.json({ spots })
 }))
 
@@ -40,6 +42,7 @@ router.get('/:id(\\d+)', asyncHandler(async () => {
             where: { spotId: id }
         }
     })
+    console.log('*********************', spot)
     return res.json({ spot })
 })) 
 

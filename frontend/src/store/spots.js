@@ -1,11 +1,11 @@
 import { csrfFetch } from './csrf';
 
-const GETALLSPOTS = 'spots/GETALL'
+const GETALLSPOTS = 'spots/GETALL';
 
 const load = array => ({
     type: GETALLSPOTS,
     payload: array
-})
+});
 
 export const getSpots = () => async dispatch => {
     const res = await csrfFetch(`/api/spots`);

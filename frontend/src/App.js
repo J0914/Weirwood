@@ -4,9 +4,11 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from './components/Navigation'
+import Slideshow from './components/Slideshow'
 import Splash from "./components/Splash"
 import Footer from "./components/Footer"
 import * as sessionActions from "./store/session";
+import * as spotsActions from './store/spots'
 
 import './index.css'
 
@@ -15,13 +17,18 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser())
+    .then(dispatch(spotsActions.getSpots()))
+    .then(() => setIsLoaded(true));
   }, [dispatch]);
+
+ 
+
 
   return (
     <>
     <Navigation isLoaded={isLoaded}/>
-    {isLoaded && (
+    {isLoaded &&(
       <Switch>
         <Route exact path="/">
           <Splash />

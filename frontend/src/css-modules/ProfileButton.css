@@ -13,9 +13,13 @@ label {
     
 }
 
+#dropdownContainer {
+    position: relative;
+    z-index: 2;
+}
+
 .profileDropdown {
     position: absolute;
-    z-index: 3;
     right: 1px;
     background-color: #ebebeb;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;

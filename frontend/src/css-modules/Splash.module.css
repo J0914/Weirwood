@@ -1,56 +1,82 @@
-
-
 #splashH1 {
-    grid-area: h1;
     position: relative;
     top: 0px;
-    font-size: 3em;
+    font-size: 2em;
     margin-top: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
-    height: 75px;
+    height: auto;
     border-bottom: 1px solid black;
     white-space: nowrap;
 }
 
+#gm {
+    width: 100%;
+    text-align: right;
+}
+
+#header {
+    grid-area: head;
+    
+}
+
 #welcomeMsg {
     text-align:left;
-    font-size: 1.7em;
+    color: rgb(17, 7, 7);
+    font-size: 1.8em;
     width: 800px;
-    margin-left: 25px;
+    margin: 25px;
+    padding: 5px;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: .2px .2px 0.3rem -2px #310d12;
+    border: .5px solid rgba(255, 255, 255, 0.1)
+
 }
 
 #welcome {
     grid-area: p;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 675px;
+    max-width: 875px;
+    box-shadow: .5px .5px 0.625rem -2px black;
+    border: 1px solid rgba(255, 255, 255, 0.1)
+
 }
 
-.footer {
-    grid-area: foot;
-}
+#spots {
+    
+    grid-area: spots; 
+    position: relative;
+    width: 100%;
+    height: 420px;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: center;
 
-#test {
-    grid-area: test;
 }
 
 .splashBody {
     display: grid; 
-    grid-template-rows: 120px 120px 65%;
+    grid-template-rows: 200px auto;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas: 
-    '. h1 .'
-    '. p .'
-    '. test .';
+    '. head .'
+    '. p .';
     justify-items: center;
     /* align-items: center; */
     flex-direction: column;
     position: absolute;
-    top: 71px;
     left: 0px;
     height: 100%;
     width: 100%;

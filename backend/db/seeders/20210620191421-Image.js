@@ -9,7 +9,9 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Images', [
-    {spotId: 1, url: '/images/Dragonstone1.jpg', createdAt: new Date(), updatedAt: new Date()}
+    {spotId: 1, url: '/images/Dragonstone1.jpg', createdAt: new Date(), updatedAt: new Date()},
+    {spotId: 2, url: '/images/TheEyrie1.png', createdAt: new Date(), updatedAt: new Date()}
+
    ], {});
   },
 

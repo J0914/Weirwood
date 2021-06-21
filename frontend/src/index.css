@@ -22,10 +22,11 @@ button {
 #root {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 0;
-    bottom: 0px;
-    background-size: cover;
+    top: 75px;
+    bottom: 0;
+    /* background-size: cover; */
     background-image: linear-gradient(rgb(204, 204, 204),#ce3a4e)
 }
 

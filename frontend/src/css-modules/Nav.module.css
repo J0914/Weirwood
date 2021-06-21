@@ -48,7 +48,8 @@ p {
 
 .nav {
     width: 100%;
-    position: sticky;
+    position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
@@ -66,7 +67,7 @@ p {
 
 .navDropdown{
     position: absolute;
-    z-index: 100;
+
     left: 1px;
     top:67px;
     background-color: #ebebeb;

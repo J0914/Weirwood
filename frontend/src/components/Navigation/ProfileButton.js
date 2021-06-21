@@ -39,6 +39,7 @@ const ProfileButton = ({ user }) => {
             <i className="fas fa-chess-knight" />
             </button>
             {showMenu && (
+                <div id='dropdownContainer'>
                 <ul className='profileDropdown'>
                     <label>
                         User:
@@ -51,6 +52,7 @@ const ProfileButton = ({ user }) => {
                     
                     <button id='logout' onClick={logout}>Log Out</button>  
                 </ul>
+                </div>
             )}
         </div>
     )

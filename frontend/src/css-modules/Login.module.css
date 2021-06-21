@@ -70,10 +70,10 @@ li {
     align-items: center;
     box-sizing: border-box;
     border-radius: 5px;
+    border: 1px inset solid black;
     width: 650px;
     height: 650px;
-    padding: 50px;
-    margin: 75px;
+    margin: 4em;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
     background-color: rgb(204, 204, 204);
 }
