@@ -25,13 +25,14 @@ p {
         font-size: 3em;
 }
 
-#home {
+#home, #castles {
     display: grid;
     grid-area: home;
     height: 30px;
     width: auto;
     font-size: 2em;
     text-align: left;
+    margin: 1px;
 }
 
 #signup {

@@ -13,8 +13,8 @@ const Splash = () => {
             </div>
             <div id={styles.welcome}>
                 <p id={styles.welcomeMsg}> 
-                They say that every person's home is their castle, but what if your home really
-                could be a castle? Here at Weirwood we offer the best selection of castles
+                They say that every person's home is their castle, but what if you want to 
+                vacation in a real one? Here at Weirwood we offer the best selection of castles
                 in Westeros for your next vacation. Browse our selection and make one of our
                 castles your temporary home!
                 </p>

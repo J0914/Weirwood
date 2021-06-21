@@ -9,8 +9,8 @@
 }
 
 .img {
-    width: 552px;
-    height: 305px;
+    width: 555px;
+    height: 300px;
     border-radius: 5px;
 }
 
@@ -61,7 +61,7 @@
 .description {
     font-size: 1.3em;
     overflow-y: scroll;
-    height: 215px;
+    height: 160px;
     position: relative;
     margin: 5px;
     border-radius: 5px;
@@ -83,7 +83,21 @@
     border-radius: 5px;
     background-color: rgba(0, 0, 0, .8);
     margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
+
+#price {
+    font-size: 1.2em;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+#perWeek {
+    font-size: .7em;
+}
+
 
 #location {
     margin: 0;
