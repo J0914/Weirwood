@@ -1,0 +1,9 @@
+.btnContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navBtns {
+    width: auto;
+    margin-top: 10px;
+}

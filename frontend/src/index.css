@@ -4,8 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    
+    /* overflow: hidden;     */
 }
 
 button {
@@ -20,20 +19,49 @@ button {
 }
 
 #root {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     top: 75px;
-    bottom: 0;
-    /* background-size: cover; */
-    background-image: linear-gradient(rgb(204, 204, 204),#ce3a4e)
+    bottom: -100px;
+    background-image: linear-gradient(rgb(204, 204, 204),#c23f51);
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: 
+    '. rootitem .';
 }
 
 h1, h2, h3 {
     font-family: Cinzel;
+    margin: 0;
 }
 
 * {
     font-family: Raleway;
 }
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #310d12;
+}
+
+@media screen and (max-width: 960px) {
+    #root {
+        top: 150px;
+    }
+}
+
+

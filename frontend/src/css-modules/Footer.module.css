@@ -1,11 +1,9 @@
 footer {
     position: absolute;
     z-index: 3;
-    bottom: 0;
+    bottom: 0em;
     width: 100%;
-}
-
-.footer {
-    background-color: #bdbdbd;
-    box-shadow: -1px -5px 25px 0px #310d12;
+    background-color: #310d12;
+    box-shadow: -1px -1px 25px 0px #310d12;
+    color: white;
 }

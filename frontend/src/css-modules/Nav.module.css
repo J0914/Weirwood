@@ -35,6 +35,10 @@ p {
     margin: 1px;
 }
 
+#home:hover, #castles:hover {
+    border: 1px solid #ce3a4e;
+}
+
 #signup {
     display: grid;
     grid-area: signup;
@@ -62,8 +66,8 @@ p {
 }
 
 .navContainer {
-    width: 100%;
-    
+    width: 100vw;
+    height: 10vh;
 }
 
 .navDropdown{

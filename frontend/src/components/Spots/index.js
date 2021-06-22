@@ -1,29 +1,30 @@
-import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { Link } from 'react-router-dom'
 import styles from '../../css-modules/Spots.module.css';
 
 
-const Spots = () => {
-    const [spots, setSpots] = useState(null)
-    const allSpots = useSelector((state) => state.spots.list);
-
-    useEffect(() => {
-        setSpots(allSpots)
-    }, [spots, allSpots])
+const Spots = ({allSpots}) => {
 
     return (
         <div id={styles.spots}> 
-            {spots && spots.map(spot => (
-                <div className={styles.spotImg} key={spot.id} >
-                    <div className={styles.textDiv}>
-                        <div className={styles.textHeaderDiv}>
-                        <label className={styles.spotLabel}>{spot.title}</label>
-                        <label id={styles.location} className={styles.spotLabel}>{spot.location}</label>
+            {allSpots && allSpots.map(spot => (
+                <Link  to={`/castles/${spot.id}`}>
+                    <div key={spot.id} className={styles.spotContainer}>
+                        <div className={styles.spotImg} key={spot.id} >     
+                            <img className={styles.img} src={spot.Images[0].url} alt={spot.title}></img>
                         </div>
-                        <p className={styles.description}>{spot.description}</p>
+                        <div className={styles.textHeaderDiv}>
+                            <div id={styles.leftSide}>
+                                <label id={styles.price} className={styles.spotLabel}>{spot.price} Gold Dragons</label>
+                                <label id={styles.perWeek} className={styles.spotLabel}>weekly</label>
+                            </div>
+                            <div id={styles.rightSide}>
+                                <label className={styles.spotLabel}>{spot.title}</label>
+                                <label id={styles.location} className={styles.spotLabel}>{spot.location}</label>
+                            </div>
+                        </div>
                     </div>
-                    <img className={styles.img} src={spot.Images[0].url} alt={spot.title}></img>
-                </div>
+                </Link>
             ))}
             </div>
     )

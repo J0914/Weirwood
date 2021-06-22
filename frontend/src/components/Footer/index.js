@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <p> Created by: Jordyn Sechrist </p>
+            <p> Hi, I'm a footer. 🤓 </p>
         </footer>
     )
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Spots from '../Spots';
 
 import '../../css-modules/Slideshow.css'
-import styles from '../../css-modules/Spots.module.css';
 
 function Slideshow() {
   const [index, setIndex] = React.useState(0);
@@ -27,7 +25,7 @@ function Slideshow() {
     );
 
     return () => {};
-  }, [index]);
+  }, [index, allSpots]);
 
   return (
     <div className="slideshow">
@@ -40,21 +38,21 @@ function Slideshow() {
             className="slide"
             key={index}
           >
-              <div className={styles.spotImg} key={spot.id} >
-                    <div className={styles.textDiv}>
-                        <div className={styles.textHeaderDiv}>
-                          <div id={styles.leftSide}>
-                            <label id={styles.price} className={styles.spotLabel}>{spot.price} Gold Dragons</label>
-                            <label id={styles.perWeek} className={styles.spotLabel}>weekly</label>
+              <div className='spotImg' key={spot.id} >
+                    <div className='textDiv'>
+                        <div className='textHeaderDiv'>
+                          <div id='leftSide'>
+                            <label id='price' className='spotLabel'>{spot.price} Gold Dragons</label>
+                            <label id='perWeek' className='spotLabel'>weekly</label>
                           </div>
-                          <div id={styles.rightSide}>
-                            <label className={styles.spotLabel}>{spot.title}</label>
-                            <label id={styles.location} className={styles.spotLabel}>{spot.location}</label>
+                          <div id='rightSide'>
+                            <label className='spotLabel'>{spot.title}</label>
+                            <label id='location' className='spotLabel'>{spot.location}</label>
                           </div>
                         </div>
-                        <p className={styles.description}>{spot.description}</p>
+                        <p className='description'>{spot.description}</p>
                     </div>
-                    <img className={styles.img} src={spot.Images[0].url} alt={spot.title}></img>
+                    <img className='img' src={spot.Images[0].url} alt={spot.title}></img>
                 </div> 
           </div>
         ))}

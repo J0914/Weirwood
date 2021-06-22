@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.INTEGER
     },
+    regionId: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
     title: {
       allowNull: false,
       type: DataTypes.STRING(80)
@@ -24,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Spot.associate = function(models) {
     Spot.hasMany(models.Image, { foreignKey: 'spotId' })
+    Spot.belongsTo(models.Region, { foreignKey: 'regionId'})
   };
   return Spot;
 };

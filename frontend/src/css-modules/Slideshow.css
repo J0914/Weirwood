@@ -36,3 +36,129 @@
   .slideshowDot.active {
     background-color: black;
   }
+
+  /* Spots */
+
+  #spots {
+    margin-right: 30px;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px;
+}
+
+.img {
+    width: 555px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.spotImg {
+    grid-area: img;
+    width: 550px;
+    height: 300px;
+    margin: 5px;
+    display: flex;
+    position: relative;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: .4rem .4rem 0.625rem -4px #310d12;
+    background-color: rgb(204, 204, 204);
+    max-width: 828px;
+}
+
+.info {
+    grid-area: info;
+}
+
+
+
+.spotContainer {
+    display: grid;
+    grid-template-rows: auto 100px;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    'img'
+    'info';
+    background-color: rgba(255, 255, 255, .8);
+    box-shadow: .4rem .4rem 0.625rem -4px #310d12;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.textDiv {
+    height: 250px;
+    position: relative; 
+    z-index: 2;
+    border-radius: 5px;   
+}
+
+.spotImg .textDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+    white-space:normal;
+}
+
+.spotImg:hover .textDiv {
+    display: block;
+    background: rgba(0, 0, 0, .6);  
+}
+
+.description {
+    font-size: 1.3em;
+    overflow-y: scroll;
+    height: 205px;
+    position: relative;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+.spotLabel {
+    font-size: 2em;
+    /* border-bottom: 2px solid white; */
+    /* margin: 5px; */
+    display: flex;
+    position: relative;
+    right: 8px;
+    justify-content: flex-end;
+
+}
+
+.textHeaderDiv {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .8);
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: white;
+}
+
+#price {
+    font-size: 1.2em;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+#perWeek {
+    font-size: .7em;
+}
+
+
+#location {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1em;
+
+}

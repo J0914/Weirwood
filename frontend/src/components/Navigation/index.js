@@ -27,7 +27,7 @@ const Navigation = ({ isLoaded }) => {
     }, [showNavMenu])
     
     return (
-        <div className={styles.navContainer}>
+        // <div className={styles.navContainer}>
             <nav className={styles.nav}>
                 <span className={styles.homeSpan}>
                 <button id='btn' onClick={openNavMenu}>
@@ -56,7 +56,7 @@ const Navigation = ({ isLoaded }) => {
                 }
                 </span>
             </nav>
-        </div>
+        // </div>
     );
 }
 

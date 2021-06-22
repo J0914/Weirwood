@@ -33,8 +33,9 @@ router.get('/', asyncHandler(async (req,res) => {
     return res.json({ spots })
 }))
 
-router.get('/:id(\\d+)', asyncHandler(async () => {
-    const id = parseInt(req.params.spotId, 10)
+router.get('/:id', asyncHandler(async (req,res) => {
+  const id = parseInt(req.params.id, 10)
+  console.log(id)
     const spot = await db.Spot.findOne({
         where: { id },
         include: {

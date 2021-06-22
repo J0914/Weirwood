@@ -1,10 +1,16 @@
 import { csrfFetch } from './csrf';
 
 const GETALLSPOTS = 'spots/GETALL';
+const GETONESPOT = 'spots/GETONE'
 
 const load = array => ({
     type: GETALLSPOTS,
     payload: array
+});
+
+const loadOne = spot => ({
+    type: GETONESPOT,
+    payload: spot
 });
 
 export const getSpots = () => async dispatch => {
@@ -16,7 +22,16 @@ export const getSpots = () => async dispatch => {
     }
 };
 
-const initialState = { list: null };
+export const getSingleSpot = (spotId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/spots/${spotId}`)
+
+    if (res.ok) {
+        const response = await res.json();
+        dispatch(loadOne(response.spot))
+    }
+}
+
+const initialState = { list: null, currentCastle: null };
 
 const spotsReducer = (state = initialState, action) => {
   let newState;
@@ -24,6 +39,10 @@ const spotsReducer = (state = initialState, action) => {
     case GETALLSPOTS:
         newState = Object.assign({}, state);
         newState.list = action.payload;
+        return newState;
+    case GETONESPOT:
+        newState = Object.assign({}, state);
+        newState.currentCastle = action.payload;
         return newState;
     default:
       return state;
