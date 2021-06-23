@@ -32,11 +32,7 @@ export default function Castle () {
                     <img className={styles.img} src={castle.Images[0].url} alt={castle.title}></img>
                 </div>
                 <div id={styles.info}>
-                    <div id={styles.infoLeftSide}>
                     <p id={styles.description}>{castle.description}</p>
-                    </div>
-                    <div id={styles.infoRightSide}>
-                    </div>
                 </div>
                 </>
                 }

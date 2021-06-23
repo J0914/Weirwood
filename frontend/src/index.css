@@ -1,5 +1,7 @@
 /* TODO Add site wide styles */
-
+html {
+    overflow-x: hidden;
+}
 
 body {
     margin: 0;
@@ -8,14 +10,18 @@ body {
 }
 
 button {
-    background-color: #ce3a4e;
-    color: white;
+    background-color: #CED7E8   ;
+    color: #16131E ;
     font-weight: 800;
     padding: 5px;
     border-radius: 5px;
     border: none;
     font-family: Cinzel;
     font-size: 2em;
+}
+
+button:hover {
+    border: 1px solid #16131E ;
 }
 
 #root {
@@ -26,7 +32,7 @@ button {
     z-index: 1;
     top: 75px;
     bottom: -100px;
-    background-image: linear-gradient(rgb(204, 204, 204),#c23f51);
+    background-image: linear-gradient(#C1BDBE ,#1C2F3E);
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-areas: 
@@ -45,17 +51,17 @@ h1, h2, h3 {
 ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
+	background-color: #C1BDBE ;
 }
 ::-webkit-scrollbar
 {
 	width: 6px;
-	background-color: #F5F5F5;
+	background-color: #C1BDBE ;
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background-color: #310d12;
+	background-color: #16131E ;
 }
 
 @media screen and (max-width: 960px) {

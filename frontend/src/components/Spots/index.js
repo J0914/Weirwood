@@ -8,8 +8,8 @@ const Spots = ({allSpots}) => {
     return (
         <div id={styles.spots}> 
             {allSpots && allSpots.map(spot => (
-                <Link  to={`/castles/${spot.id}`}>
-                    <div key={spot.id} className={styles.spotContainer}>
+                <Link key={spot.id} className={styles.link}  to={`/castles/${spot.id}`}>
+                    <div className={styles.spotContainer}>
                         <div className={styles.spotImg} key={spot.id} >     
                             <img className={styles.img} src={spot.Images[0].url} alt={spot.title}></img>
                         </div>

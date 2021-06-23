@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     height: auto;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #16131E ;
     white-space: nowrap;
 }
 
@@ -23,15 +23,15 @@
 
 #welcomeMsg {
     text-align:left;
-    color: rgb(17, 7, 7);
+    color: #16131E ;
     font-size: 1.8em;
     width: 800px;
     margin: 25px;
-    padding: 5px;
-    background-color:rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    /* background-color:rgba( 206,215,232, 0.5); */
     border-radius: 5px;
-    box-shadow: .2px .2px 0.3rem -2px #310d12;
-    border: .5px solid rgba(255, 255, 255, 0.1)
+    box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
+    border: .5px solid rgba(22,19,30s, 0.1)
 
 }
 
@@ -42,12 +42,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(22,19,30, 0.2);
     border-radius: 10px;
     height: 675px;
     max-width: 875px;
-    box-shadow: .5px .5px 0.625rem -2px black;
-    border: 1px solid rgba(255, 255, 255, 0.1)
+    box-shadow: .5px .5px 0.625rem -2px #16131E ;
+    border: 1px solid rgba(193,189,190, 0.1)
 
 }
 
@@ -98,7 +98,7 @@
         display: flex;
         justify-content: center;
         height: 75px;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #16131E ;
     }
 
     .splashBody {

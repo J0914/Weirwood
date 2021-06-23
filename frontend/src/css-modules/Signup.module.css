@@ -9,7 +9,7 @@ body {
 input {
     width: 95%;
     border: none;
-    border-bottom: 1px solid #6b6b6b;
+    border-bottom: 1px solid #16131E;
     margin: 3px;
     margin-bottom: 3px;
     margin-top: 0;
@@ -70,11 +70,12 @@ li {
     align-items: center;
     box-sizing: border-box;
     border-radius: 5px;
+    border: 1px inset solid #C1BDBE ;
     width: 650px;
     height: 650px;
     margin: 4em;
-    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
-    background-color: rgb(204, 204, 204);
+    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E;
+    background-color: #CED7E8;
 }
 
 .inputs {
@@ -88,8 +89,8 @@ li {
 
 .submitBtn {
     width: 75%;
-    background-color: #ce3a4e;
-    color: white;
+    background-color: #1C2F3E;
+    color: #C1BDBE;
     font-weight: 800;
     padding: 5px;
     margin: 2px 0;

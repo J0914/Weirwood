@@ -50,7 +50,7 @@ function Slideshow() {
                             <label id='location' className='spotLabel'>{spot.location}</label>
                           </div>
                         </div>
-                        <p className='description'>{spot.description}</p>
+                        {/* <p className='description'>{spot.description}</p> */}
                     </div>
                     <img className='img' src={spot.Images[0].url} alt={spot.title}></img>
                 </div> 

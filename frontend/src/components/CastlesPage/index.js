@@ -30,15 +30,17 @@ const CastlesPage = ({allSpots}) => {
     }, [allSpots])     
 
     return (
-        <>
-        <div className={styles.btnContainer}>
-            <button onClick={() => getAll()} className={styles.navBtns}> All </button>
-            <button onClick={() => getTheNorth()} className={styles.navBtns}> The North </button>
-            <button onClick={() => getTheSouth()} className={styles.navBtns}> The South </button>
-            <button onClick={() => getCentral()} className={styles.navBtns}> Central </button>
+        <div id={styles.castlesContainer}>
+            <div className={styles.btnContainer}>
+                <button onClick={() => getAll()} className={styles.navBtns}> All </button>
+                <button onClick={() => getTheNorth()} className={styles.navBtns}> The North </button>
+                <button onClick={() => getTheSouth()} className={styles.navBtns}> The South </button>
+                <button onClick={() => getCentral()} className={styles.navBtns}> Central </button>
+            </div>
+            <div id={styles.spots}>
+            <Spots allSpots={currentSpots}/>
+            </div>
         </div>
-        <Spots allSpots={currentSpots}/>
-        </>
     );
 }
 

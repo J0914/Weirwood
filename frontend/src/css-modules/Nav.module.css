@@ -8,9 +8,9 @@ ol {
     align-self: center;
 }
 
-button {
-    height: 50px;
-    width: 50px;
+.btn {
+    height: 40px;
+    width: 40px;
     margin-right: 10px;
 }
 
@@ -36,7 +36,7 @@ p {
 }
 
 #home:hover, #castles:hover {
-    border: 1px solid #ce3a4e;
+    border: 1px solid #16131E  ;
 }
 
 #signup {
@@ -53,6 +53,7 @@ p {
 
 .nav {
     width: 100%;
+    color: #C1BDBE ;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -60,9 +61,9 @@ p {
     right: 0;
     height: 75px;
     display: flex;
-    background-color: rgb(204, 204, 204);
+    background-color: #1C2F3E;
     justify-content: space-between;
-    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E ;
 }
 
 .navContainer {
@@ -75,8 +76,8 @@ p {
 
     left: 1px;
     top:67px;
-    background-color: #ebebeb;
-    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #310d12;
+    background-color: #C1BDBE ;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E ;
     padding: 10px;
     margin: 5px;
     font-size: .8em;
@@ -106,13 +107,15 @@ p {
     align-items: center;
 }
 
-
+.navLink:hover { 
+    border: 1px solid #16131E ;
+}
 .navLink {
     font-family: Cinzel;
     margin-left: 10px;
     text-decoration: none;
-    background-color: #ce3a4e;
-    color: white;
+    background-color: #CED7E8 ;
+    color: #16131E ;
     font-weight: 800;
     border-radius: 5px;
     border: none;
@@ -126,7 +129,8 @@ p {
 }
 
 .activeNav {
-    background-color: #ab2a3c;
+    background-color: #16131E ;
+    color: #CED7E8; 
 }
 
 
