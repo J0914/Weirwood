@@ -31,18 +31,19 @@
     overflow: scroll;
     overflow-x: hidden;
     font-size: .8em;
+    box-shadow: 1px 1px 1rem -2px #1C2F3E ;
+
 }
 
 #header {
     grid-area: head;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
-    height: 20vh;
     margin-bottom: 5px;
     font-size: 2.5em;
-    border-bottom: 1px solid #16131E ;
+    border-bottom: 1px solid #C1BDBE ;
     padding: 0;
 }
 
@@ -79,8 +80,10 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
-    border: 1.7px solid #16131E ;
-    background-color: #16131E ;
+    border: 1.7px solid #C1BDBE;
+    background-color: #C1BDBE;
+    box-shadow: 1px 1px 1rem -2px #1C2F3E ;
+
 }
 
 

@@ -18,10 +18,13 @@ button {
     border: none;
     font-family: Cinzel;
     font-size: 2em;
+    box-sizing: border-box;
+
 }
 
 button:hover {
-    border: 1px solid #16131E ;
+    background-color: #16131E  ;
+    color: #CED7E8 ;
 }
 
 #root {
@@ -34,7 +37,7 @@ button:hover {
     bottom: -100px;
     background-image: linear-gradient(#C1BDBE ,#1C2F3E);
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: 
     '. rootitem .';
 }

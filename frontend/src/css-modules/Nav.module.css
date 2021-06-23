@@ -36,7 +36,8 @@ p {
 }
 
 #home:hover, #castles:hover {
-    border: 1px solid #16131E  ;
+    background-color: #16131E  ;
+    color: #CED7E8 ;
 }
 
 #signup {
@@ -73,15 +74,16 @@ p {
 
 .navDropdown{
     position: absolute;
-
-    left: 1px;
-    top:67px;
-    background-color: #C1BDBE ;
-    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E ;
+    left: 3px;
+    top: 70px;
+    background-color: #1C2F3E  ;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #1C2F3E ;
     padding: 10px;
     margin: 5px;
     font-size: .8em;
     width: 250px;
+    border: 1px solid #C1BDBE;  
+    border-radius: 5px;
 }
 
 .homeSpan, .authSpan {
@@ -108,7 +110,8 @@ p {
 }
 
 .navLink:hover { 
-    border: 1px solid #16131E ;
+    background-color: #16131E  ;
+    color: #CED7E8 ;
 }
 .navLink {
     font-family: Cinzel;
@@ -131,6 +134,11 @@ p {
 .activeNav {
     background-color: #16131E ;
     color: #CED7E8; 
+}
+
+#authBtns {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -162,28 +170,27 @@ p {
         margin-right: 30px;
     }
 
-    #home {
+    #home, #castles, #logout, #profile {
         height: auto;
         width: auto;
         font-size: 3.5em;
     }
 
-    #signup {
-        height: 50px;
+    #signup, #login {
+        height:auto;
         width: auto;
         font-size: 2em;
     }
 
-    #login {
-        height: 50px;
-        width: auto;
-        font-size: 2em;
+    #authBtns {
+        margin: 1px;
+        width: 140px;
+        flex-direction: column;
     }
 
-    #profile {
-        height: auto;
-        width: auto;
-        font-size: 4em;
+    .navLink {
+        margin: 3px;
+        text-align: center;
     }
 
     .nav {
@@ -210,7 +217,7 @@ p {
     }
 }
 
-@media screen and (max-width: 580px) {
+/* @media screen and (max-width: 580px) {
 
     .nav {
         height: 275px;
@@ -239,4 +246,4 @@ p {
         text-align: center;
         
     }
-}
+} */

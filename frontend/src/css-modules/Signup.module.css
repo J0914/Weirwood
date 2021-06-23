@@ -41,7 +41,7 @@ li {
     top: -30px;
     padding: 20px 0px;
     margin-top: 0;
-    marginBottom: 60px;
+    margin-bottom: 60px;
     padding: 1px;
 }
 
@@ -49,14 +49,14 @@ li {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 20% 60% 20%;
-    grid-template-areas: 
-    '. . .' '. form .';
+    grid-template-areas:
+        '. . .''. form .';
     position: absolute;
     top: 75px;
     width: 100%;
     margin: 0;
     justify-items: center;
-    
+
 }
 
 .form {
@@ -70,7 +70,7 @@ li {
     align-items: center;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 1px inset solid #C1BDBE ;
+    border: 1px inset solid #C1BDBE;
     width: 650px;
     height: 650px;
     margin: 4em;
@@ -101,12 +101,12 @@ li {
 .errors {
     color: red;
     display: flex;
-    
+    margin: 0;
     flex-wrap: wrap;
     width: 350px;
     box-sizing: borderBox;
     justify-content: flex-start;
-    paddingBottom: 30px;
+    padding-bottom: 30px;
 }
 
 @media screen and (max-width: 840px) {

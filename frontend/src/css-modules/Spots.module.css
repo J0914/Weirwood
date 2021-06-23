@@ -43,7 +43,7 @@
 #spots:hover > * { opacity: 0.4; transform: scale(0.9); }
 /* Fade out all items when the parent is hovered */
 
-#spots > *:hover { opacity: 1; transform: scale(1); transition-delay: 0ms, 0ms; }
+#spots > *:hover { opacity: 1; transform: scale(1.05); transition-delay: 0ms, 0ms; }
 /* Fade in the currently hovered item */
 
 
@@ -55,7 +55,7 @@
     'img'
     'info';
     margin: 3px;
-    width: 555px;
+    width: 500px;
     padding: 0;
     grid-gap: 0;
     border-radius: 30px;

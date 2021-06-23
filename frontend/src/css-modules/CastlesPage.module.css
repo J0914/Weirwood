@@ -6,15 +6,16 @@
 }
 
 .btnContainer {
-    display: flex;
-    justify-content: space-evenly;
-    height: auto;
-    width: 100%;
-    margin-top: 2%;
+    margin: 45%;
+    margin-top: 3%;
+    margin-bottom: 0;
+    font-size: 2em;
+    text-align: center;
 }
 
 .navBtns {
     width: auto;
+    box-sizing: border-box;
     margin: 1%
 }
 

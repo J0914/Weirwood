@@ -20,7 +20,8 @@ label {
 
 .profileDropdown {
     position: absolute;
-    right: 1px;
+    right: -10px;
+    top: 3px;
     background-color: #1C2F3E  ;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #1C2F3E ;
     padding: 10px;

@@ -5,6 +5,7 @@ import styles from '../../css-modules/CastlesPage.module.css'
 
 const CastlesPage = ({allSpots}) => {
     const [currentSpots, setCurrentSpots] = React.useState(allSpots)
+    const [region, setRegion] = React.useState('all')
     
     const getTheNorth = () => {
         const res = allSpots.filter(spot => spot.regionId === 1);
@@ -27,16 +28,35 @@ const CastlesPage = ({allSpots}) => {
 
     React.useEffect(() => {
         setCurrentSpots(allSpots)
-    }, [allSpots])     
+    }, [allSpots])   
+    
+    React.useEffect(() => {
+        if (region === 'all') {
+            getAll();
+        }
+        if (region === 'north') {
+            getTheNorth();
+        }
+        if (region === 'south') {
+            getTheSouth();
+        }
+        if (region === 'central') {
+            getCentral();
+        }
+    }, [region])
 
     return (
         <div id={styles.castlesContainer}>
-            <div className={styles.btnContainer}>
-                <button onClick={() => getAll()} className={styles.navBtns}> All </button>
-                <button onClick={() => getTheNorth()} className={styles.navBtns}> The North </button>
-                <button onClick={() => getTheSouth()} className={styles.navBtns}> The South </button>
-                <button onClick={() => getCentral()} className={styles.navBtns}> Central </button>
-            </div>
+            <select 
+            className={styles.btnContainer}
+            value={region}
+            onChange={(e) => setRegion(e.target.value)}
+            >
+                <option value='all' className={styles.navBtns}> All </option>
+                <option value='north' className={styles.navBtns}> North </option>
+                <option value='central' className={styles.navBtns}> Central </option>
+                <option value='south' className={styles.navBtns}> South </option>
+            </select>
             <div id={styles.spots}>
             <Spots allSpots={currentSpots}/>
             </div>

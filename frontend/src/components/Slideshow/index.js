@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 import '../../css-modules/Slideshow.css'
@@ -7,6 +8,15 @@ function Slideshow() {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
   const allSpots = useSelector((state) => state.spots.list);
+
+  const topSpots = [];
+
+  allSpots && allSpots.forEach(spot => {
+    if (spot.id === 3 || spot.id === 4 || spot.id === 6 
+    || spot.id === 11 || spot.id === 14) {
+      topSpots.push(spot)
+    }
+  })
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -19,13 +29,13 @@ function Slideshow() {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-            allSpots && prevIndex === allSpots.length - 1 ? 0 : prevIndex + 1  
+            topSpots && prevIndex === topSpots.length - 1 ? 0 : prevIndex + 1  
         ),
       5000
     );
 
     return () => {};
-  }, [index, allSpots]);
+  }, [index, topSpots]);
 
   return (
     <div className="slideshow">
@@ -33,33 +43,35 @@ function Slideshow() {
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        {allSpots && allSpots.map((spot, index) => (
+        {topSpots && topSpots.map((spot, index) => (
           <div
             className="slide"
             key={index}
           >
-              <div className='spotImg' key={spot.id} >
-                    <div className='textDiv'>
-                        <div className='textHeaderDiv'>
-                          <div id='leftSide'>
-                            <label id='price' className='spotLabel'>{spot.price} Gold Dragons</label>
-                            <label id='perWeek' className='spotLabel'>weekly</label>
+              <Link to={`/castles/${spot.id}`}>
+                <div className='spotImg' key={spot.id} >
+                      <div className='textDiv'>
+                          <div className='textHeaderDiv'>
+                            <div id='leftSide'>
+                              <label id='price' className='spotLabel'>{spot.price} Gold Dragons</label>
+                              <label id='perWeek' className='spotLabel'>weekly</label>
+                            </div>
+                            <div id='rightSide'>
+                              <label className='spotLabel'>{spot.title}</label>
+                              <label id='location' className='spotLabel'>{spot.location}</label>
+                            </div>
                           </div>
-                          <div id='rightSide'>
-                            <label className='spotLabel'>{spot.title}</label>
-                            <label id='location' className='spotLabel'>{spot.location}</label>
-                          </div>
-                        </div>
-                        {/* <p className='description'>{spot.description}</p> */}
-                    </div>
-                    <img className='img' src={spot.Images[0].url} alt={spot.title}></img>
-                </div> 
+                          {/* <p className='description'>{spot.description}</p> */}
+                      </div>
+                      <img className='img' src={spot.Images[0].url} alt={spot.title}></img>
+                  </div>
+                </Link> 
           </div>
         ))}
       </div>
 
       <div className="slideshowDots">
-        {allSpots && allSpots.map((_, idx) => (
+        {topSpots && topSpots.map((_, idx) => (
           <div
             key={idx}
             className={`slideshowDot${index === idx ? " active" : ""}`}

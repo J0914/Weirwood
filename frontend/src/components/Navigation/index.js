@@ -49,10 +49,10 @@ const Navigation = ({ isLoaded }) => {
                 <ProfileButton id={styles.profile} user={user} /> 
                 </>
                 :
-                <>
+                <div id={styles.authBtns}>
                 <NavLink to='/login' id={styles.login} className={styles.navLink} activeClassName={styles.activeNav}>Log In</NavLink> 
-                <NavLink to='/signup' id={styles.signup} className={styles.navLink} activeClassName={styles.activeNav}>Create Account</NavLink>
-                </>
+                <NavLink to='/signup' id={styles.signup} className={styles.navLink} activeClassName={styles.activeNav}>Sign Up</NavLink>
+                </div>
                 }
                 </span>
             </nav>
