@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/J0914/Godswood/issues"
   },
-  "homepage": "https://github.com/J0914/Godswood#readme"
+  "homepage": "https://github.com/J0914/Godswood#readme",
+  "dependencies": {}
 }

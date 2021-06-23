@@ -11,6 +11,7 @@
     margin-bottom: 0;
     font-size: 2em;
     text-align: center;
+    width: max-content;
 }
 
 .navBtns {

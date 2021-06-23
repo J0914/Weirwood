@@ -31,20 +31,30 @@
     border-radius: 5px;
 }
 
-#spots { visibility: hidden; }
 /* Prevents :hover from triggering in the gaps between items */
+#spots { 
+    visibility: hidden; 
+}
 
-#spots > * { visibility: visible; }
 /* Brings the child items back in, even though the parent is `hidden` */
+#spots > * { 
+    visibility: visible; 
+}
 
-#spots > * { transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms; }
 /* Makes the fades smooth with a slight delay to prevent jumps as the mouse moves between items */
+#spots > * { 
+    transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms; 
+}
 
-#spots:hover > * { opacity: 0.4; transform: scale(0.9); }
 /* Fade out all items when the parent is hovered */
+#spots:hover > * { 
+    opacity: 0.4; transform: scale(0.9); 
+}
 
-#spots > *:hover { opacity: 1; transform: scale(1.05); transition-delay: 0ms, 0ms; }
 /* Fade in the currently hovered item */
+#spots > *:hover { 
+    opacity: 1; transform: scale(1.05); transition-delay: 0ms, 0ms; 
+}
 
 
 .spotContainer {
