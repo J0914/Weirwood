@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as spotsActions from '../../store/spots'
+import * as bookingsActions from '../../store/bookings'
 import BookingFormModal from '../BookingFormModal'
 
 
@@ -11,16 +12,18 @@ export default function Castle () {
     const { id } = useParams();
     const dispatch = useDispatch();
     const castle = useSelector(state => state.spots.currentCastle)
-    console.log(id)
     
     useEffect(() => {
         dispatch(spotsActions.getSingleSpot(id))
     }, [dispatch, id])
 
+    useEffect(() => {
+        dispatch(bookingsActions.clearErrors());
+    }, [dispatch])
+
     
 
     return (
-        // <div className={styles.background}>
             <div id={styles.castleContainer}>
                 {castle && 
                 <>

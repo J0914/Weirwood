@@ -33,7 +33,7 @@ button:hover {
     overflow: hidden;
     position: absolute;
     z-index: 1;
-    top: 75px;
+    top: 0;
     bottom: -100px;
     background-image: linear-gradient(#C1BDBE ,#1C2F3E);
     display: grid;
@@ -67,10 +67,6 @@ h1, h2, h3 {
 	background-color: #16131E ;
 }
 
-@media screen and (max-width: 960px) {
-    #root {
-        top: 150px;
-    }
-}
+
 
 

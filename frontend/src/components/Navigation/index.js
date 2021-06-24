@@ -14,7 +14,9 @@ const Navigation = ({ isLoaded }) => {
     let sessionLinks;
     if (user) {
         sessionLinks = (
+            <div id={styles.dropdownDiv}>
             <ProfileButton id={styles.profile} user={user} /> 
+            </div>
         );
     } else {
         sessionLinks = (

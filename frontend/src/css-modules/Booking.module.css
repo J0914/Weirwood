@@ -36,6 +36,9 @@ li {
     text-decoration: none;
 }
 
+li::marker {
+    color: white;
+}
 
 .header {
     text-align: center;

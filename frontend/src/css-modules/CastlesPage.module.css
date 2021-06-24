@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    top: 75px;
 }
 
 .btnContainer {

@@ -8,6 +8,7 @@ export default function BookingForm () {
     const user = useSelector(state => state.session.user)
     const castle = useSelector(state => state.spots.currentCastle)
     const stateErr = useSelector(state => state.bookings.errors)
+    const success = useSelector(state => state.bookings.success)
     const dispatch = useDispatch();
     
     
@@ -21,7 +22,7 @@ export default function BookingForm () {
     const [selectedEnd, setSelectedEnd] = useState(selectedStart);
     const [errors, setErrors] = useState([]);
     const [theStateErr, setTheStateErr] = useState([]);
-    const [success, setSuccess] = useState([]);
+    const [isSuccess, setIsSuccess] = useState([]);
 
     useEffect(() => {
         setSelectedEnd(selectedStart)
@@ -35,52 +36,61 @@ export default function BookingForm () {
             
             const spotId = castle.id;
             const userId = user.id;
+            console.log('************', 'got here')
             dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
             .catch(async (res) => {
+                console.log(res)
                 const data = await res.json();
-                if (data && data.errors) {
-                    setErrors(data.errors);
-                } else if (stateErr !== null) {
-                    setErrors(...errors ,stateErr);        
-                } else {
-                    setSuccess(['Congrats, you have created a booking for this casle!']);
-                }
+                if (data && data.errors) setErrors(data.errors);
+                if (stateErr !== null) setTheStateErr([stateErr]);  
+                if (!errors && !stateErr) setIsSuccess([success])
             })
     
         } else {
             setErrors(['You must be logged in to create a booking!'])
-        }
-
-       
+        }  
     }
     
     useEffect(() => {
-        if (stateErr)
-        setTheStateErr(stateErr)
     },[stateErr])
-
+    
     useEffect(() => {
-        dispatch(bookingsActions.clearErrors());
-        setErrors([])
-    }, [castle])
+        if (success) setIsSuccess([success])
+        if (stateErr){
+            setTheStateErr([stateErr])
+            setIsSuccess([])
+        }
+    },[stateErr, success,])
 
     return (
         <div id={styles.formDiv} >
             <form id={styles.bookingForm} onSubmit={handleBookingSubmit}>
                 <h3 className={styles.header}> Select your dates! </h3>
-                {errors.length || theStateErr.length ? 
+                {errors ? 
                 <div className={styles.errors}>
-                    <ul>
-                        {success && success.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
-                    </ul>
                     <ul>
                         {errors && errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
                     </ul>
-                    <ul>
+                </div>
+                    : null 
+                }
+                {theStateErr ?
+                <div className={styles.errors}>
+                     <ul>
                         {theStateErr && theStateErr.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
                     </ul>
-                </div> : null
+                </div> 
+                    : null
                 }
+                {isSuccess ? 
+                <div className={styles.errors}>
+                     <ul>
+                        {isSuccess && isSuccess.map((msg, idx) => <li className={styles.li} key={idx}>{msg}</li>)}
+                    </ul> 
+                </div> 
+                    : null
+                }
+                
                 <div className={styles.inputs}>
                     <label>
                         Start Date:

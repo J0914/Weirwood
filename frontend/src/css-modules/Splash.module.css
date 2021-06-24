@@ -1,6 +1,6 @@
 #splashH1 {
     position: relative;
-    top: 0px;
+    /* top: 0px; */
     font-size: 2em;
     margin-top: 40px;
     margin-bottom: 0;
@@ -76,6 +76,7 @@
     /* align-items: center; */
     flex-direction: column;
     position: absolute;
+    top: 75px;
     left: 0px;
     height: 100%;
     width: 100%;

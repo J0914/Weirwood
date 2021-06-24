@@ -2,7 +2,7 @@
     grid-area: rootitem;
     max-width: 1180px;
     position: relative;
-    
+    top: 75px;
     width: 100%;
     display: grid;
     grid-template-rows: 10em 1fr 2fr auto;
@@ -128,4 +128,12 @@
     box-shadow: 1px 1px 1rem -2px #1C2F3E ;
 }
 
+@media screen and (max-width: 960px) {
+    #castleContainer {
+        position: relative;
+        top: 150px;
+        margin: 2%;
+    }
 
+    
+}

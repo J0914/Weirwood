@@ -7,16 +7,9 @@ import '../../css-modules/Slideshow.css'
 function Slideshow() {
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
-  const allSpots = useSelector((state) => state.spots.list);
+  const topSpots = useSelector((state) => state.spots.topSpots);
 
-  const topSpots = [];
-
-  allSpots && allSpots.forEach(spot => {
-    if (spot.id === 3 || spot.id === 4 || spot.id === 6 
-    || spot.id === 11 || spot.id === 14) {
-      topSpots.push(spot)
-    }
-  })
+  
 
   function resetTimeout() {
     if (timeoutRef.current) {

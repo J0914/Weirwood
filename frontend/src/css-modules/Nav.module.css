@@ -20,14 +20,12 @@ p {
 }
 
 #siteName{
-        display: grid;
+        display: flex;
         grid-area: name;
         font-size: 3em;
 }
 
 #home, #castles {
-    display: grid;
-    grid-area: home;
     height: 30px;
     width: auto;
     font-size: 2em;
@@ -40,30 +38,67 @@ p {
     color: #CED7E8 ;
 }
 
+.navLink:hover { 
+    background-color: #16131E  ;
+    color: #CED7E8 ;
+}
+.navLink {
+    font-family: Cinzel;
+    margin: 2px;
+    margin-left: 10px;
+    text-decoration: none;
+    background-color: #CED7E8 ;
+    color: #16131E ;
+    font-weight: 800;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    width: auto;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 7px;
+    padding-right: 7px;
+    align-items: center;
+}
+
 #signup {
     display: grid;
-    grid-area: signup;
+    grid-area: auth;
     white-space: nowrap;
 }
 
 #login {
     display: grid;
-    grid-area: login;
+    grid-area: auth;
     white-space: nowrap;
 }
 
+#dropdownDiv {
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: 10px;       
+}
+
 .nav {
+
+    margin: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    display: grid;
+    align-items: center;
+    /* grid-template-rows: 50% 50%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'home name auth';
     color: #C1BDBE ;
-    position: fixed;
+    position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
     right: 0;
     height: 75px;
-    display: flex;
     background-color: #1C2F3E;
-    justify-content: space-between;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E ;
 }
 
@@ -119,13 +154,18 @@ p {
 #authBtns {
     display: flex;
     flex-direction: row;
+    margin-right: 10px;
 }
 
 
 
 @media screen and (max-width: 960px) {
 
-    
+    #authBtns {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
 
     .homeSpan {
         grid-area: home;
@@ -134,6 +174,7 @@ p {
 
     .authSpan {
         grid-area: auth;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -179,12 +220,13 @@ p {
         width: 100%;
         display: flex;
         align-items: center;
-        /* display: grid;
-        align-items: center;
-        grid-template-rows: 50% 50%;
-        grid-template-columns: 100%;
-        grid-template-areas: 
-        'home ' ' auth'; */
+        
+    }
+
+    #dropdownDiv {
+        display: flex;
+        justify-content: flex-end; 
+        margin-right: 10px;       
     }
 
     #siteName {

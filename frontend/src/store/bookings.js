@@ -1,7 +1,15 @@
 import { csrfFetch } from './csrf';
 
-const BOOK = 'spots/BOOK'
-const ERROR = 'spots/ERROR'
+const BOOK = 'bookings/BOOK'
+const GETBOOKS = 'bookings/GETBOOKS'
+const ERROR = 'bookings/ERROR'
+const CLEARERROR = 'bookings/CLEARERROR'
+const CLEARBOOKS = 'bookings/CLEARBOOKS'
+
+const getBooks = bookings => ({
+    type: GETBOOKS,
+    payload: bookings
+})
 
 const book = bookings => ({
     type: BOOK,
@@ -14,12 +22,21 @@ const error = error => ({
 })
 
 const clearError = () => ({
-    type: ERROR,
+    type: CLEARERROR,
+    payload: null
+})
+
+const clearBookings = () => ({
+    type: CLEARBOOKS,
     payload: null
 })
 
 export const clearErrors = () => async dispatch => {
     dispatch(clearError());
+}
+
+export const clearBooks = () => async dispatch => {
+    dispatch(clearBookings());
 }
 
 // window.store.dispatch(window.spotsActions.getUserBookings(1));
@@ -29,7 +46,7 @@ export const getUserBookings = userId => async dispatch => {
 
     if (res.ok) {
         const data = await res.json();
-        dispatch(book(data.bookings))
+        dispatch(getBooks(data.bookings))
     }
 }
 
@@ -52,7 +69,6 @@ export const createBooking = ({spotId, userId, selectedStart, selectedEnd}) => a
     })
 
     const data = await res.json();
-    console.log(data.errors)
         if(data.errors !== undefined) {
             dispatch(error(data.errors));
             return;
@@ -61,14 +77,22 @@ export const createBooking = ({spotId, userId, selectedStart, selectedEnd}) => a
         dispatch(book(data.bookings))
 }
 
-const initialState = {errors: null, userBookings: null}
+const sucMsg = 'You have successfully booked this castle!'
+
+const initialState = {success: null, errors: null, userBookings: null}
 
 const bookingsReducer = (state = initialState, action) => {
     switch (action.type) {
         case BOOK:
-            return {...state, errors: null, userBookings: action.payload}
+            return {...state, success: sucMsg, errors: null, userBookings: action.payload}
+        case GETBOOKS:
+            return {...state, userBookings: action.payload}
         case ERROR:
-            return {...state, errors: [action.payload]}
+            return {...state, errors: action.payload}
+        case CLEARERROR:
+            return {...state, errors: null, success: null} 
+        case CLEARBOOKS:
+            return {...state, userBookings: null} 
       default:
         return state;
     }

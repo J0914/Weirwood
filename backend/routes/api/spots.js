@@ -33,6 +33,24 @@ router.get('/', asyncHandler(async (req,res) => {
     return res.json({ spots })
 }))
 
+router.get('/top', asyncHandler(async (req, res) => {
+  const spots = await db.Spot.findAll({
+    include: db.Image
+  });
+
+  const topSpots = [];
+
+    spots.forEach(spot => {
+    if (spot.id === 3 || spot.id === 4 || spot.id === 6 
+    || spot.id === 11 || spot.id === 14) {
+      topSpots.push(spot)
+    }
+  })
+
+  return res.json({ topSpots })
+
+}))
+
 router.get('/:id', asyncHandler(async (req,res) => {
   const id = parseInt(req.params.id, 10)
     const spot = await db.Spot.findOne({
