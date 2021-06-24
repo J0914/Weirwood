@@ -13,6 +13,15 @@ const error = error => ({
     payload: error
 })
 
+const clearError = () => ({
+    type: ERROR,
+    payload: null
+})
+
+export const clearErrors = () => async dispatch => {
+    dispatch(clearError());
+}
+
 // window.store.dispatch(window.spotsActions.getUserBookings(1));
 
 export const getUserBookings = userId => async dispatch => {

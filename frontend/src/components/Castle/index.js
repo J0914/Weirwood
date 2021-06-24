@@ -17,6 +17,8 @@ export default function Castle () {
         dispatch(spotsActions.getSingleSpot(id))
     }, [dispatch, id])
 
+    
+
     return (
         // <div className={styles.background}>
             <div id={styles.castleContainer}>
@@ -26,10 +28,6 @@ export default function Castle () {
                         <div id={styles.headTop}>
                             <h2 id={styles.title}> {castle.title} </h2>
                         </div>
-                        <div id={styles.headBottom}>
-                            <label id={styles.price}>{castle.price} Gold Dragons</label>
-                            <h3 id={styles.location}>{castle.location}</h3>
-                        </div>
                     </div>
                     <div id={styles.imgContainer}>
                         <img className={styles.img} src={castle.Images[0].url} alt={castle.title}></img>
@@ -37,7 +35,15 @@ export default function Castle () {
                     <div id={styles.info}>
                         <p id={styles.description}>{castle.description}</p>
                     </div>
-                    <BookingFormModal />
+                    <div id={styles.formWrapper}>
+                        <div id={styles.headBottom}>
+                            <label id={styles.price}>{castle.price} Gold Dragons</label>
+                            <h3 id={styles.location}>{castle.location}</h3>
+                        </div>
+                        <div id={styles.formDiv}>
+                        <BookingFormModal />
+                        </div>
+                    </div>
                 </>
                 }
             </div>

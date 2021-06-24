@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as bookingsActions from '../../store/bookings'
 
-import styles from '../../css-modules/Login.module.css'
+import styles from '../../css-modules/Booking.module.css'
 
 export default function BookingForm () {
     const user = useSelector(state => state.session.user)
     const castle = useSelector(state => state.spots.currentCastle)
     const stateErr = useSelector(state => state.bookings.errors)
     const dispatch = useDispatch();
-
+    
     
     let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
@@ -21,6 +21,7 @@ export default function BookingForm () {
     const [selectedEnd, setSelectedEnd] = useState(selectedStart);
     const [errors, setErrors] = useState([]);
     const [theStateErr, setTheStateErr] = useState([]);
+    const [success, setSuccess] = useState([]);
 
     useEffect(() => {
         setSelectedEnd(selectedStart)
@@ -28,32 +29,50 @@ export default function BookingForm () {
     
     const handleBookingSubmit= (e) => {
         e.preventDefault();
-        setErrors([]);
-        
-        const spotId = castle.id;
-        const userId = user.id;
-        dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
-        .catch(async (res) => {
-            const data = await res.json();
-            if (data && data.errors) setErrors(data.errors);
-        })
 
-        if (stateErr !== null)
-        setErrors(...errors ,stateErr);        
+        if (user) {
+            setErrors([]);
+            
+            const spotId = castle.id;
+            const userId = user.id;
+            dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) {
+                    setErrors(data.errors);
+                } else if (stateErr !== null) {
+                    setErrors(...errors ,stateErr);        
+                } else {
+                    setSuccess(['Congrats, you have created a booking for this casle!']);
+                }
+            })
+    
+        } else {
+            setErrors(['You must be logged in to create a booking!'])
+        }
+
+       
     }
     
     useEffect(() => {
         if (stateErr)
-        window.alert(stateErr)
-        // setTheStateErr(stateErr)
+        setTheStateErr(stateErr)
     },[stateErr])
+
+    useEffect(() => {
+        dispatch(bookingsActions.clearErrors());
+        setErrors([])
+    }, [castle])
 
     return (
         <div id={styles.formDiv} >
             <form id={styles.bookingForm} onSubmit={handleBookingSubmit}>
-                <h3> Book a stay! </h3>
+                <h3 className={styles.header}> Select your dates! </h3>
                 {errors.length || theStateErr.length ? 
                 <div className={styles.errors}>
+                    <ul>
+                        {success && success.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
+                    </ul>
                     <ul>
                         {errors && errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
                     </ul>
