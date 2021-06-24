@@ -72,7 +72,7 @@ const validateBooking = [
     .withMessage('Please choose a end date!')
 ]
 
-router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res) => {
+router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res, next) => {
   const spotId = parseInt(req.params.spotId, 10)
   const { userId, start, end } = req.body;
 
@@ -111,6 +111,57 @@ router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res) => {
 
   return res.json({ bookings })
 
-}))
+}));
+
+reviewValidators = [
+  check('body')
+    .exists({ checkFalsey: true })
+    .withMessage('Sorry, you can\'t post an empty review.')
+]
+
+router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, next) => {
+  const spotId = parseInt(req.params.spotId, 10)
+  const { userId, body } = req.body;
+  console.log('USER ID IS ********', userId)
+  console.log('BODY IS ********', body)
+
+  const alreadyExists = await db.Review.findAll({
+    where: {
+      spotId: spotId, 
+      userId: userId
+    }
+  })
+
+  if (alreadyExists) {
+    const err = new Error('Already Exists');
+      err.status = 403;
+      err.title = 'Already Exists';
+      err.errors = ['Seven Hells! You\'ve already posted a review on this castle.'];
+      return next(err);
+  }
+
+  const review = await db.Review.create({
+    userId,
+    spotId,
+    body
+  })
+
+  if (!review) {
+      const err = new Error('Review failed');
+      err.status = 401;
+      err.title = 'Booking failed';
+      err.errors = ['Seven Hells! Something went wrong. Please try again!'];
+      return next(err);
+  }
+
+  const reviews = await db.Review.findAll({
+    where: {
+      spotId
+    }
+  })
+
+  return res.json({ reviews })
+
+}));
 
 module.exports = router;

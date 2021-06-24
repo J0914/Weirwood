@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import * as spotsActions from '../../store/spots'
 import * as bookingsActions from '../../store/bookings'
 import BookingFormModal from '../BookingFormModal'
+import Reviews from '../Reviews';
+import ReviewForm from '../Reviews/ReviewForm';
 
 
 import styles from '../../css-modules/Castle.module.css'
@@ -46,6 +48,12 @@ export default function Castle () {
                         <div id={styles.formDiv}>
                         <BookingFormModal />
                         </div>
+                    </div>
+                    <div id={styles.reviewFormDiv}>
+                        <ReviewForm />
+                    </div>
+                    <div id={styles.reviewsDiv}>
+                        <Reviews />
                     </div>
                 </>
                 }

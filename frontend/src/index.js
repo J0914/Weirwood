@@ -4,6 +4,7 @@ import React from 'react';
 import * as sessionActions from './store/session'
 import * as spotsActions from './store/spots'
 import * as bookingsActions from './store/bookings'
+import * as reviewsActions from './store/reviews'
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.spotsActions = spotsActions;
   window.bookingsActions = bookingsActions;
+  window.reviewsActions = reviewsActions;
 }
 
 function Root() {
