@@ -10,6 +10,7 @@ const router = express.Router();
 const validateLogin = [
     check('credential')
       .exists({ checkFalsy: true })
+      .withMessage('Please enter a username!')
       .notEmpty()
       .withMessage('Please provide a valid email or username.'),
     check('password')

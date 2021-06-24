@@ -48,5 +48,20 @@ router.post('/', validateSignup, asyncHandler(async (req, res) => {
     }),
 );
 
+router.get('/:userId/bookings', asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.userId, 10);
+
+  const bookings = await db.Booking.findAll({
+    where: {
+      userId
+    }
+  })
+
+  console.log('The Bookings', bookings)
+
+  return res.json({ bookings })
+
+}))
+
 // f4CJ7QBO-roeokTQAahPTznjiB-D19lBnj0Q
 module.exports = router;

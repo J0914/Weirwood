@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
-import SignupFormPage from "./components/SignupFormPage";
 import CastlesPage from "./components/CastlesPage";
 import Navigation from './components/Navigation'
 import Splash from "./components/Splash"
@@ -32,12 +30,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Splash />
-        </Route>
-        <Route path="/login">
-          <LoginFormPage />
-        </Route>
-        <Route path="/signup">
-          <SignupFormPage />
         </Route>
         <Route path="/castles/:id">
           <Castle allSpots={allSpots}/>

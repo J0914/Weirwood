@@ -2,12 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import ProfileButton from './ProfileButton'
+import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
 
 import styles from '../../css-modules/Nav.module.css'
 
 const Navigation = ({ isLoaded }) => {
     const [showNavMenu, setShowNavMenu] = useState(false)
     const user = useSelector((state) => state.session.user)
+    
+    let sessionLinks;
+    if (user) {
+        sessionLinks = (
+            <ProfileButton id={styles.profile} user={user} /> 
+        );
+    } else {
+        sessionLinks = (
+            <span className={styles.authSpan}>
+                <div id={styles.authBtns}>
+                    <LoginFormModal />
+                    <SignupFormModal />
+                </div>
+            </span>
+        )
+    }
 
     const openNavMenu = () => {
         if (showNavMenu) return;
@@ -43,18 +61,7 @@ const Navigation = ({ isLoaded }) => {
                 <span className={styles.weirSpan}>
                 <p id={styles.siteName}> Weirwood </p>
                 </span>
-                <span className={styles.authSpan}>
-                {isLoaded && user ? 
-                <>
-                <ProfileButton id={styles.profile} user={user} /> 
-                </>
-                :
-                <div id={styles.authBtns}>
-                <NavLink to='/login' id={styles.login} className={styles.navLink} activeClassName={styles.activeNav}>Log In</NavLink> 
-                <NavLink to='/signup' id={styles.signup} className={styles.navLink} activeClassName={styles.activeNav}>Sign Up</NavLink>
-                </div>
-                }
-                </span>
+                {isLoaded && sessionLinks}
             </nav>
         // </div>
     );
