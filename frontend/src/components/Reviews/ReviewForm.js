@@ -13,16 +13,25 @@ export default function ReviewForm () {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [body, setBody] = useState('');
+
+    let userId;
+    let spotId;
+
+    if (castle) {
+        spotId = castle.id;
+    }
+    if (user) {
+        userId = user.id;
+
+    }
     
-    const handleReviewSubmit= (e) => {
+    const handleReviewSubmit= async (e) => {
         e.preventDefault();
 
         if (user) {
             setErrors([]);
             setIsSubmitted(true);
-            const spotId = castle.id;
-            const userId = user.id;
-            dispatch(reviewsActions.createReview({ spotId, userId, body }))
+            await dispatch(reviewsActions.createReview({ spotId, userId, body }))
             .catch(async (res) => {
                 const data = await res.json();
                 if (data && data.errors) {

@@ -56,7 +56,6 @@ router.get('/:userId/bookings', asyncHandler(async (req, res) => {
       userId
     }
   })
-  console.log(bookings)
   return res.json({ bookings })
 
 }))

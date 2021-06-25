@@ -174,8 +174,10 @@
 @media screen and (max-width: 960px) {
     #castleContainer {
         position: relative;
+        height: 77vh;
         top: 150px;
         margin: 2%;
+        
     }
 
     

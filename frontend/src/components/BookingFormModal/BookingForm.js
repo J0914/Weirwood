@@ -33,7 +33,6 @@ export default function BookingForm () {
             
             const spotId = castle.id;
             const userId = user.id;
-            console.log('************', 'got here')
             dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
             .catch(async (res) => {
                 const data = await res.json();

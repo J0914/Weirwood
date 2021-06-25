@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import ProfileButton from './ProfileButton'
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import BookingModal from '../BookingsModal';
+
 
 import styles from '../../css-modules/Nav.module.css'
 
@@ -57,6 +59,9 @@ const Navigation = ({ isLoaded }) => {
                 <ul className={styles.navDropdown}>
                     <NavLink exact to='/' id = {styles.home} className={styles.navLink} activeClassName={styles.activeNav}>Home</NavLink>
                     <NavLink exact to='/castles' id = {styles.castles} className={styles.navLink} activeClassName={styles.activeNav}>Browse</NavLink>
+                    {user && 
+                        <BookingModal />
+                    }
                 </ul>
                 )}
                 </span>

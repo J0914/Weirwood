@@ -36,7 +36,6 @@ function App() {
     } else {
       dispatch(bookingsActions.clearBooks());
     }
-    console.log('Got here')
   }, [userId, user, dispatch]);
 
   const allSpots = useSelector((state) => state.spots.list);

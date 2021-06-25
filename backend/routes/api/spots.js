@@ -115,6 +115,19 @@ router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res, next
 
 }));
 
+router.get('/:spotId/reviews', asyncHandler(async(req,res) => {
+  const spotId = parseInt(req.params.spotId, 10);
+  const reviews = await db.Review.findAll({
+    where: {
+        spotId 
+    },
+    include: db.User,
+    order: [['id', 'DESC']], 
+  })
+  
+  return res.json({ reviews })
+}))
+
 reviewValidators = [
   check('body')
     .exists({ checkFalsey: true })
@@ -124,8 +137,6 @@ reviewValidators = [
 router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, next) => {
   const spotId = parseInt(req.params.spotId, 10)
   const { userId, body } = req.body;
-  console.log('USER ID IS ********', userId)
-  console.log('BODY IS ********', body)
 
   const alreadyExists = await db.Review.findAll({
     where: {
@@ -158,26 +169,15 @@ router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, 
 
   const reviews = await db.Review.findAll({
     where: {
-      spotId
-    }
-    
+        spotId 
+    },
+    include: db.User,
+    order: [['id', 'DESC']], 
   })
 
   return res.json({ reviews })
 
 }));
 
-router.get('/:spotId/reviews', asyncHandler(async(req,res) => {
-  const spotId = parseInt(req.params.spotId, 10);
-  const reviews = await db.Review.findAll({
-    where: {
-      spotId 
-    },
-    order: [['createdAt', 'DESC']],
-    include: db.User
-  })
-
-  return res.json({ reviews })
-}))
 
 module.exports = router;

@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   .navLink:hover { 
@@ -42,5 +43,5 @@
   
   #modal-content {
     position: absolute;
-    background-color:white;
+    background-color: rgba(255, 255, 255, 0);
   }
