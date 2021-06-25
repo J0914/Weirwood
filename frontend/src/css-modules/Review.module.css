@@ -33,7 +33,7 @@ ul {
     padding: 2px;
     text-align: center;
     border-radius: 0 0 5px 5px;
-    background-color: #1C2F3E ;
+    background-color: #16131E  ;
     color: #C1BDBE ;
     border: 2px solid #C1BDBE;
 }
@@ -41,7 +41,7 @@ ul {
 .submitBtn:hover {
     background-color: #C1BDBE;
     color: #1C2F3E;
-    border: 2px solid #1C2F3E;
+    border-top: 2px solid #1C2F3E;
 }
 
 .header {
@@ -61,16 +61,20 @@ ul {
     resize: none;
     border: 3px solid #C1BDBE;
     border-bottom: 2px;
+    background-color: rgba(193,189,190, .8);
+    color: #16131E;
+    font-size: 1.5em;
 }
 
 #reviewContainer {
     display: grid;
+    margin-top: 3%;
     grid-template-rows: 1fr 4fr;
     grid-template-areas: 
     'head'
     'body';
     border-top: 1px solid #16131E;
-    max-height: 290px;
+    max-height: 235px;
 }
 
 #reviewHead {
@@ -83,13 +87,33 @@ ul {
 
 #body {
     grid-area: body;
+    width: 100%;
+    font-size: .8em;
     margin: 5px;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
     overflow-wrap: wrap;
     white-space: normal;
-    color: #CED7E8;
+    color: #C1BDBE;
+    background-color: rgba(22,19,30, 1);
+    border-radius: 3px;
     max-height: 150px;
+    box-shadow: 1px 0px 1rem -2px #1C2F3E ;
+
+}
+
+#udBtns {
+    height: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: .6em;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.udBtn {
+    margin: 1.5px;
 }
 
 #username {

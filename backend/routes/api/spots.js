@@ -160,6 +160,7 @@ router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, 
     where: {
       spotId
     }
+    
   })
 
   return res.json({ reviews })
@@ -172,7 +173,8 @@ router.get('/:spotId/reviews', asyncHandler(async(req,res) => {
     where: {
       spotId 
     },
-    include: db.User 
+    order: [['createdAt', 'DESC']],
+    include: db.User
   })
 
   return res.json({ reviews })

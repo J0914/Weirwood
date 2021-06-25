@@ -62,27 +62,30 @@ li::marker {
 
 .submitBtn {
     width: 75%;
-    background-color: #1C2F3E  ;
+    background-color: #16131E  ;
     color: #C1BDBE ;
+    border: 2px solid #16131E;
     font-weight: 800;
     padding: 5px;
     margin: 2% 12%;
     border-radius: 5px;
     border: none;
+    box-sizing: border-box;
+    padding: 2px;
 }
 
 #bookingBtn {
     width: 100%;
     margin-top: 9%;
-    background-color: #1C2F3E ;
+    background-color: #16131E  ;
     color: #C1BDBE ;
     border: 2px solid #C1BDBE;
 }
 
-#bookingBtn:hover {
+.submitBtn:hover, #bookingBtn:hover {
     background-color: #C1BDBE;
-    color: #1C2F3E;
-    border: 2px solid #1C2F3E;
+    color: #16131E;
+    border: 2px solid #16131E;
 }
 
 #formDiv {

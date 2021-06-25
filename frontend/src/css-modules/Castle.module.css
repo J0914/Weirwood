@@ -21,7 +21,7 @@
     height: 83vh;
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
     border: 1px solid rgba(193,189,190, 0.1);
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
 }
 
@@ -58,7 +58,7 @@
     border-radius: 5px 0 0 5px;
     color: #C1BDBE;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
     font-size: .8em;
     box-shadow: 1px 0px 1rem -2px #1C2F3E ;
