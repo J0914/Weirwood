@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     body: {
-      type: DataTypes.TEXT(200)
+      type: DataTypes.TEXT
     },
   }, {});
   Review.associate = function(models) {

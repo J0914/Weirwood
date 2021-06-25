@@ -1,25 +1,24 @@
 #castleContainer {
     grid-area: rootitem;
-    max-width: 1180px;
     position: relative;
     top: 75px;
     width: 100%;
+    max-width: 997px;
     display: grid;
     grid-template-rows: 10em 1fr 2fr auto auto;
     grid-template-columns: 1fr 3fr 3fr 1fr;
     grid-template-areas:
     '. head head .'
     '. img img . '
-    '. desc BF .'
+    '. ui ui .'
     '. RF RF .'
     '. review review .' ;  
     margin: auto;
     margin-top: 2.5%;
-    margin-bottom: 0;
+    margin-bottom: 5%;
     background-color: rgba(22,19,30, 0.2);
     border-radius: 10px;
-    height: 85vh;
-    max-width: 100%;
+    height: 83vh;
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
     border: 1px solid rgba(193,189,190, 0.1);
     overflow: scroll;
@@ -39,22 +38,31 @@
 
 }
 
-#info {
-    grid-area: desc;
-    margin: 1px;
+#underImgDiv {
+    grid-area: ui;
     display: flex;
+    justify-content: space-between;
+    max-width: 736px;
+}
+
+#info {
+    margin: 1px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    display: flex;
+    min-width: 400px;
     justify-content: space-between;
     height: 17vh;
     background-color:rgba(22,19,30, 1);
     border: 1px solid #16131E ;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     color: #C1BDBE;
     width: 100%;
     overflow: scroll;
     overflow-x: hidden;
     font-size: .8em;
-    box-shadow: 1px 1px 1rem -2px #1C2F3E ;
-
+    box-shadow: 1px 0px 1rem -2px #1C2F3E ;
+    padding: 10px;
 }
 
 #header {
@@ -66,6 +74,7 @@
     margin-bottom: 5px;
     font-size: 2.5em;
     padding: 0;
+
 }
 
 #headTop {
@@ -106,6 +115,7 @@
 
 .img {
     width: 100%;
+    max-width: 736px;
     height: auto;
     border-radius: 20px;
     border: 1.7px solid #C1BDBE;
@@ -126,15 +136,39 @@
 }
 
 #formWrapper {
-    grid-area: BF;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 5px;
+    height: 158px;
+    position: relative;
+    top: 1px;
+    width: 100%; 
+    border-radius: 0 5px 5px 0;
     padding: 10px;
     box-shadow: 1px 1px 1rem -2px #1C2F3E ;
+}
+
+@media screen and (max-width: 1220px) {
+    #underImgDiv {
+        flex-direction: column;
+    }
+
+    #formWrapper {
+        width: 97.5%;
+        border-radius: 0 0 5px 5px;
+        height: fit-content;
+        flex-direction: row-reverse;
+        margin-bottom: 10px;
+    }
+
+    #formDiv {
+        width: 30%;
+    }
+
+    #info {
+        border-radius: 5px 5px 0 0;
+    }
+    
 }
 
 @media screen and (max-width: 960px) {

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as spotsActions from '../../store/spots'
 import * as bookingsActions from '../../store/bookings'
+import * as reviewsActions from '../../store/reviews'
 import BookingFormModal from '../BookingFormModal'
 import Reviews from '../Reviews';
 import ReviewForm from '../Reviews/ReviewForm';
@@ -14,16 +15,17 @@ export default function Castle () {
     const { id } = useParams();
     const dispatch = useDispatch();
     const castle = useSelector(state => state.spots.currentCastle)
-    
+    let spotId;
+    if (castle) spotId = castle.id
+
     useEffect(() => {
         dispatch(spotsActions.getSingleSpot(id))
-    }, [dispatch, id])
-
-    useEffect(() => {
-        dispatch(bookingsActions.clearErrors());
-    }, [dispatch])
-
+    }, [dispatch, id]) 
     
+    useEffect(() => {
+        if (castle)
+        dispatch(reviewsActions.getReviews(spotId))
+    }, [dispatch, spotId, castle])
 
     return (
             <div id={styles.castleContainer}>
@@ -37,6 +39,7 @@ export default function Castle () {
                     <div id={styles.imgContainer}>
                         <img className={styles.img} src={castle.Images[0].url} alt={castle.title}></img>
                     </div>
+                    <div id={styles.underImgDiv} >
                     <div id={styles.info}>
                         <p id={styles.description}>{castle.description}</p>
                     </div>
@@ -48,6 +51,7 @@ export default function Castle () {
                         <div id={styles.formDiv}>
                         <BookingFormModal />
                         </div>
+                    </div>
                     </div>
                     <div id={styles.reviewFormDiv}>
                         <ReviewForm />

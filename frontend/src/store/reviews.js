@@ -1,23 +1,12 @@
 import { csrfFetch } from './csrf';
 
-const POSTREVIEW = 'reviews/POSTREVIEW'
-const ERROR = 'reviews/ERROR'
-const CLEARERROR = 'review/CLEARERROR'
+const GETREVIEWS = 'reviews/POSTREVIEW'
 
 const updateReviews = reviews => ({
-    type: POSTREVIEW,
+    type: GETREVIEWS,
     payload: reviews
 })
 
-const error = error => ({
-    type: ERROR,
-    payload: error
-})
-
-const clearError = () => ({
-    type: CLEARERROR,
-    payload: null
-})
 
 // window.store.dispatch(window.reviewsActions.createReview({
 //     spotId: 1, 
@@ -27,8 +16,6 @@ const clearError = () => ({
 
 
 export const createReview = ({ spotId, userId, body }) => async dispatch => {
-    console.log('USERID IS **********', userId)
-    console.log('BODY is **********', body)
     const res = await csrfFetch(`/api/spots/${spotId}/reviews`, {
         method: 'POST',
         headers: {
@@ -38,32 +25,23 @@ export const createReview = ({ spotId, userId, body }) => async dispatch => {
     })
 
     const data = await res.json();
-    if (data.errors !== undefined) {
-        dispatch(error(data.errors));
-        return;
-    }
     
     dispatch(updateReviews(data.reviews));
 }
 
+export const getReviews = (spotId) => async dispatch => {
+    const res = await csrfFetch(`/api/spots/${spotId}/reviews`)
 
+    const data = await res.json();
+    dispatch(updateReviews(data.reviews));
+}
 
-
-
-
-
-
-
-const initialState = {spotReviews: null, errors: null}
+const initialState = {spotReviews: null}
 
 const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case POSTREVIEW:
-            return {...state, spotReviews: action.payload }
-        case ERROR:
-            return {...state, errors: action.payload}
-        case CLEARERROR:
-            return {...state, errors: null} 
+        case GETREVIEWS:
+            return {...state, spotReviews: action.payload } 
         default:
         return state;
     }

@@ -1,0 +1,101 @@
+.textAreaDiv {
+    width: 95%;
+    height: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    align-items: center;
+}
+
+.errors {
+    color: rgb(255, 133, 133);
+}
+
+.li {
+    margin: 5px;
+    width: 95%;
+    margin-left: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+.submitBtn {
+    width: 85.5%;
+    height: 1.5em;
+    font-size: 1.5em;
+    padding: 2px;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    background-color: #1C2F3E ;
+    color: #C1BDBE ;
+    border: 2px solid #C1BDBE;
+}
+
+.submitBtn:hover {
+    background-color: #C1BDBE;
+    color: #1C2F3E;
+    border: 2px solid #1C2F3E;
+}
+
+.header {
+    text-align: center;
+    margin: 25px auto 25px auto;
+    font-size: 2.5em;
+}
+
+
+#textarea {
+    position: relative;
+    overflow-wrap: wrap;
+    width: 84%;
+    height: 100px;
+    overflow: auto;
+    border-radius: 5px 5px 0 0;
+    resize: none;
+    border: 3px solid #C1BDBE;
+    border-bottom: 2px;
+}
+
+#reviewContainer {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+    'head'
+    'body';
+    border-top: 1px solid #16131E;
+    max-height: 290px;
+}
+
+#reviewHead {
+    grid-area: head;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    margin: 5px;
+}
+
+#body {
+    grid-area: body;
+    margin: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-wrap: wrap;
+    white-space: normal;
+    color: #CED7E8;
+    max-height: 150px;
+}
+
+#username {
+    font-size: 2em;
+}
+
+#date {
+    font-size: 1.5em;
+}

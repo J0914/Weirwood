@@ -83,9 +83,11 @@ router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res, next
     }
   })
   if (alreadyExists.length > 0) {
-    let errors = 'You have already created a booking for this castle!'
-    res.json({errors})
-    return;
+    const err = new Error('Already Exists');
+      err.status = 403;
+      err.title = 'Already Exists';
+      err.errors = ['Seven Hells! You\'ve already created a booking for this castle!'];
+      return next(err);
   }
 
   const booking = await db.Booking.create({
@@ -132,7 +134,7 @@ router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, 
     }
   })
 
-  if (alreadyExists) {
+  if (alreadyExists.length > 0) {
     const err = new Error('Already Exists');
       err.status = 403;
       err.title = 'Already Exists';
@@ -163,5 +165,17 @@ router.post('/:spotId/reviews', reviewValidators, asyncHandler(async (req, res, 
   return res.json({ reviews })
 
 }));
+
+router.get('/:spotId/reviews', asyncHandler(async(req,res) => {
+  const spotId = parseInt(req.params.spotId, 10);
+  const reviews = await db.Review.findAll({
+    where: {
+      spotId 
+    },
+    include: db.User 
+  })
+
+  return res.json({ reviews })
+}))
 
 module.exports = router;

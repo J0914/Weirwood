@@ -7,10 +7,7 @@ import styles from '../../css-modules/Booking.module.css'
 export default function BookingForm () {
     const user = useSelector(state => state.session.user)
     const castle = useSelector(state => state.spots.currentCastle)
-    const stateErr = useSelector(state => state.bookings.errors)
-    const success = useSelector(state => state.bookings.success)
     const dispatch = useDispatch();
-    
     
     let today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
@@ -21,8 +18,8 @@ export default function BookingForm () {
     const [selectedStart, setSelectedStart] = useState(today);
     const [selectedEnd, setSelectedEnd] = useState(selectedStart);
     const [errors, setErrors] = useState([]);
-    const [theStateErr, setTheStateErr] = useState([]);
-    const [isSuccess, setIsSuccess] = useState([]);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
         setSelectedEnd(selectedStart)
@@ -39,11 +36,10 @@ export default function BookingForm () {
             console.log('************', 'got here')
             dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
             .catch(async (res) => {
-                console.log(res)
                 const data = await res.json();
-                if (data && data.errors) setErrors(data.errors);
-                if (stateErr !== null) setTheStateErr([stateErr]);  
-                if (!errors && !stateErr) setIsSuccess([success])
+                if (data && data.errors) {
+                    setErrors(data.errors);
+                } else if (data) setIsSuccess(true)
             })
     
         } else {
@@ -52,15 +48,9 @@ export default function BookingForm () {
     }
     
     useEffect(() => {
-    },[stateErr])
-    
-    useEffect(() => {
-        if (success) setIsSuccess([success])
-        if (stateErr){
-            setTheStateErr([stateErr])
-            setIsSuccess([])
-        }
-    },[stateErr, success,])
+        if (errors.length > 0) setIsSuccess(false);
+        if (isSubmitted && errors.length === 0) setIsSuccess(true);
+    },[isSubmitted, errors])
 
     return (
         <div id={styles.formDiv} >
@@ -69,28 +59,19 @@ export default function BookingForm () {
                 {errors ? 
                 <div className={styles.errors}>
                     <ul>
-                        {errors && errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
+                        {errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
                     </ul>
                 </div>
                     : null 
                 }
-                {theStateErr ?
-                <div className={styles.errors}>
-                     <ul>
-                        {theStateErr && theStateErr.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
-                    </ul>
-                </div> 
-                    : null
-                }
                 {isSuccess ? 
                 <div className={styles.errors}>
                      <ul>
-                        {isSuccess && isSuccess.map((msg, idx) => <li className={styles.li} key={idx}>{msg}</li>)}
+                        <li className={styles.li}>'Review Posted!'</li>
                     </ul> 
                 </div> 
                     : null
-                }
-                
+                }                
                 <div className={styles.inputs}>
                     <label>
                         Start Date:

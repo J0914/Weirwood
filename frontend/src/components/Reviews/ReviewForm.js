@@ -7,49 +7,39 @@ import styles from '../../css-modules/Review.module.css'
 export default function ReviewForm () {
     const user = useSelector(state => state.session.user)
     const castle = useSelector(state => state.spots.currentCastle)
-    const stateErr = useSelector(state => state.bookings.errors)
-    const success = useSelector(state => state.bookings.success)
     const dispatch = useDispatch();    
     
     const [errors, setErrors] = useState([]);
-    const [theStateErr, setTheStateErr] = useState([]);
-    const [isSuccess, setIsSuccess] = useState([]);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [body, setBody] = useState('');
-    console.log(body)
     
     const handleReviewSubmit= (e) => {
         e.preventDefault();
 
         if (user) {
             setErrors([]);
-            
+            setIsSubmitted(true);
             const spotId = castle.id;
             const userId = user.id;
-            console.log('************', 'got here')
             dispatch(reviewsActions.createReview({ spotId, userId, body }))
             .catch(async (res) => {
-                console.log(res)
                 const data = await res.json();
-                if (data && data.errors) setErrors(data.errors);
-                if (stateErr !== null) setTheStateErr([stateErr]);  
-                if (!errors && !stateErr) setIsSuccess([success])
+                if (data && data.errors) {
+                    setErrors(data.errors);
+                } else if (data) setIsSuccess(true)
             })
     
         } else {
             setErrors(['You must be logged in to create a review!'])
         }  
     }
+
+    useEffect(() => {
+        if (errors.length > 0) setIsSuccess(false);
+        if (isSubmitted && errors.length === 0) setIsSuccess(true);
+    },[isSubmitted, errors])
     
-    // useEffect(() => {
-    // },[stateErr])
-    
-    // useEffect(() => {
-    //     if (success) setIsSuccess([success])
-    //     if (stateErr){
-    //         setTheStateErr([stateErr])
-    //         setIsSuccess([])
-    //     }
-    // },[stateErr, success,])
 
     return (
         <div id={styles.formDiv} >
@@ -58,30 +48,24 @@ export default function ReviewForm () {
                 {errors ? 
                 <div className={styles.errors}>
                     <ul>
-                        {errors && errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
+                        {errors.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
                     </ul>
                 </div>
                     : null 
                 }
-                {theStateErr ?
-                <div className={styles.errors}>
-                     <ul>
-                        {theStateErr && theStateErr.map((error, idx) => <li className={styles.li} key={idx}>{error}</li>)}
-                    </ul>
-                </div> 
-                    : null
-                }
                 {isSuccess ? 
                 <div className={styles.errors}>
                      <ul>
-                        {isSuccess && isSuccess.map((msg, idx) => <li className={styles.li} key={idx}>{msg}</li>)}
+                        <li className={styles.li}>'Review Posted!'</li>
                     </ul> 
                 </div> 
                     : null
                 }
                 <div className={styles.textAreaDiv}>
-                    <input
-                        type="textarea"
+                    <textarea
+                        name='textarea'
+                        placeholder='Please be kind'
+                        id={styles.textarea}
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         required

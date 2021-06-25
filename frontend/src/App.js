@@ -32,14 +32,12 @@ function App() {
   }
   useEffect(() => {
     if (user) {
-      dispatch(bookingsActions.clearErrors());
       dispatch(bookingsActions.getUserBookings(userId))
     } else {
-      dispatch(bookingsActions.clearErrors());
       dispatch(bookingsActions.clearBooks());
     }
     console.log('Got here')
-  }, [user, dispatch]);
+  }, [userId, user, dispatch]);
 
   const allSpots = useSelector((state) => state.spots.list);
 

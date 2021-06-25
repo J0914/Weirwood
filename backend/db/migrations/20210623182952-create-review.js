@@ -19,15 +19,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       body: {
-        type: Sequelize.TEXT(200)
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       }
     });
   },
