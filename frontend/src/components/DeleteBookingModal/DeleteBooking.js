@@ -1,18 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import * as reviewsActions from '../../store/reviews'
+import * as bookingsActions from '../../store/bookings'
 
 import styles from '../../css-modules/DeleteModal.module.css'
 
-export default function DeleteModal ({setShowModal, reviewId}) {
+export default function DeleteModal ({setShowModal, bookingId}) {
 
-    const castle = useSelector(state => state.spots.currentCastle);
+    const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
-    const spotId = castle.id;
+    const userId = user.id
 
     const handleDelete = () => {
-        dispatch(reviewsActions.deleteReview(spotId, reviewId))
+        dispatch(bookingsActions.deleteBooking(userId, bookingId))
     }
 
     const cancel = () => {
@@ -23,7 +23,7 @@ export default function DeleteModal ({setShowModal, reviewId}) {
     return (
         <div id={styles.deleteWrapper} >
             <div id={styles.deleteConfirm} >
-                <p id={styles.pConfirm}>Are you sure you want to delete this review?</p>
+                <p id={styles.pConfirm}>Are you sure you want to delete this booking?</p>
             </div>
             <div id={styles.modalBtnsDiv}>
             <button onClick={handleDelete} className={styles.modalBtn}>Delete</button>

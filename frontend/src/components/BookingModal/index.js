@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import Booking from './Booking.js';
+import Booking from './Booking';
 
-import styles from '../../css-modules/Booking.module.css'
+import styles from '../../css-modules/BookingModal.module.css'
 
 
-function BookingModal () {
+const BookingModal = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className={styles.navLink} onClick={() => setShowModal(true)}>Your Bookings</button>
+      <button id={styles.bookingBtn} className={styles.navLink} onClick={() => setShowModal(true)}>Your Bookings</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <Booking />

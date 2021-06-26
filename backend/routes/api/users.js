@@ -54,11 +54,70 @@ router.get('/:userId/bookings', asyncHandler(async (req, res) => {
   const bookings = await db.Booking.findAll({
     where: {
       userId
-    }
+    },
+    include: db.Spot
   })
   return res.json({ bookings })
 
 }))
 
-// f4CJ7QBO-roeokTQAahPTznjiB-D19lBnj0Q
+router.put('/:userId/bookings/:bookingId', asyncHandler(async (req,res) => {
+  const { bookingId, spotId, userId, start, end } = req.body;
+
+  const booking = await db.Booking.findByPk(bookingId);
+        
+  if (!booking) {
+      const err = new Error('Booking not found');
+      err.status = 404;
+      err.title = 'Booking not found';
+      err.errors = ['Could not find booking. Please try again!'];
+      return next(err);
+  } else {
+      await booking.update({userId, spotId, start, end});
+  }
+
+  const userBookings = await db.Booking.findAll({
+    where: {
+        userId 
+    },
+    include: db.Spot,
+    order: [['updatedAt', 'DESC']], 
+})
+
+    if (!userBookings) {
+    const err = new Error('Bookings not found');
+    err.status = 404;
+    err.title = 'Bookings not found';
+    err.errors = ['Could not find bookings. Please try again!'];
+    return next(err);
+    }
+
+    return res.json({ userBookings })
+
+}))
+
+router.delete('/:userId/bookings/:bookingId', asyncHandler(async(req,res,next) => {
+  const { userId, bookingId } = req.body;
+  const booking = await db.Booking.findByPk(bookingId);
+  await booking.destroy()
+
+  const userBookings = await db.Booking.findAll({
+      where: {
+          userId 
+      },
+      include: db.Spot,
+      order: [['updatedAt', 'DESC']], 
+  })
+  
+  if (!userBookings) {
+  const err = new Error('bookings not found');
+  err.status = 404;
+  err.title = 'bookings not found';
+  err.errors = ['Could not find any bookings for this user!'];
+  return next(err);
+  }
+
+  return res.json({ userBookings })
+}))
+
 module.exports = router;

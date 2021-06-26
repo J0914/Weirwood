@@ -50,6 +50,29 @@ export const createBooking = ({spotId, userId, selectedStart, selectedEnd}) => a
 }
 
 
+export const editBooking = ({bookingId, spotId, userId, selectedStart, selectedEnd}) => async dispatch => {
+    const res = await csrfFetch(`/api/users/${userId}/bookings/${bookingId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ bookingId, spotId, userId, start: selectedStart, end: selectedEnd })
+    })
+
+    const data = await res.json();
+    dispatch(getBooks(data.userBookings))
+}
+
+export const deleteBooking = (userId, bookingId) => async dispatch => {
+    const res = await csrfFetch(`/api/users/${userId}/bookings/${bookingId}`, {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({userId, bookingId})
+    })
+
+    const data = await res.json();
+    dispatch(getBooks(data.userBookings));
+}
 
 const initialState = {userBookings: null}
 

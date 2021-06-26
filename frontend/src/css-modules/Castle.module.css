@@ -78,8 +78,10 @@
 }
 
 #headTop {
-    height: auto;
+    height: fit-content;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 #title {

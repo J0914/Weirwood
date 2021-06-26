@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as spotsActions from '../../store/spots'
-import * as bookingsActions from '../../store/bookings'
 import * as reviewsActions from '../../store/reviews'
 import BookingFormModal from '../BookingFormModal'
 import Reviews from '../Reviews';
@@ -17,7 +16,7 @@ export default function Castle () {
     const castle = useSelector(state => state.spots.currentCastle)
     let spotId;
     if (castle) spotId = castle.id
-
+    
     useEffect(() => {
         dispatch(spotsActions.getSingleSpot(id))
     }, [dispatch, id]) 

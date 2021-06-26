@@ -39,9 +39,9 @@ label {
 }
 
 #btn {
-    height: 60px;
-    width: 60px;
-    font-size: 2em;
+    height: 50px;
+    width: 50px;
+    font-size: 1.8em;
 }
 
 @media screen and (max-width: 960px) {

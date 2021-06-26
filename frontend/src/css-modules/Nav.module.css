@@ -23,6 +23,9 @@ p {
         display: flex;
         grid-area: name;
         font-size: 3em;
+        text-decoration: none;
+        color: #C1BDBE ;
+
 }
 
 #home, #castles {
@@ -35,19 +38,19 @@ p {
 
 #home:hover, #castles:hover {
     background-color: #16131E  ;
-    color: #CED7E8 ;
+    color: #C1BDBE ;
 }
 
 .navLink:hover { 
     background-color: #16131E  ;
-    color: #CED7E8 ;
+    color: #C1BDBE ;
 }
 .navLink {
     font-family: Cinzel;
     margin: 2px;
     margin-left: 10px;
     text-decoration: none;
-    background-color: #CED7E8 ;
+    background-color: #C1BDBE ;
     color: #16131E ;
     font-weight: 800;
     border-radius: 5px;
@@ -76,6 +79,7 @@ p {
 #dropdownDiv {
     display: flex;
     justify-content: flex-end; 
+    align-items: flex-end;
     margin-right: 10px;       
 }
 
@@ -148,7 +152,7 @@ p {
 
 .activeNav {
     background-color: #16131E ;
-    color: #CED7E8; 
+    color: #C1BDBE; 
 }
 
 #authBtns {
@@ -183,12 +187,14 @@ p {
     .homeSpan, .authSpan {
         height: 60px;
         display: flex;
-        width: 50%
+        width: fit-content;
     }
 
     #siteName {
         font-size: 3em;
-        margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #home, #castles, #logout, #profile {
@@ -219,6 +225,7 @@ p {
         height: 150px;
         width: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         
     }

@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux'
 import ProfileButton from './ProfileButton'
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
-import BookingModal from '../BookingsModal';
-
+import BookingModal from '../BookingModal'
 
 import styles from '../../css-modules/Nav.module.css'
 
@@ -17,6 +16,7 @@ const Navigation = ({ isLoaded }) => {
     if (user) {
         sessionLinks = (
             <div id={styles.dropdownDiv}>
+            <BookingModal />
             <ProfileButton id={styles.profile} user={user} /> 
             </div>
         );
@@ -58,15 +58,12 @@ const Navigation = ({ isLoaded }) => {
                 {showNavMenu && (
                 <ul className={styles.navDropdown}>
                     <NavLink exact to='/' id = {styles.home} className={styles.navLink} activeClassName={styles.activeNav}>Home</NavLink>
-                    <NavLink exact to='/castles' id = {styles.castles} className={styles.navLink} activeClassName={styles.activeNav}>Browse</NavLink>
-                    {user && 
-                        <BookingModal />
-                    }
+                    <NavLink exact to='/castles' id = {styles.castles} className={styles.navLink} activeClassName={styles.activeNav}>Browse</NavLink>   
                 </ul>
                 )}
                 </span>
                 <span className={styles.weirSpan}>
-                <p id={styles.siteName}> Weirwood </p>
+                <NavLink exact to='/' id={styles.siteName}> Weirwood </NavLink>
                 </span>
                 {isLoaded && sessionLinks}
             </nav>

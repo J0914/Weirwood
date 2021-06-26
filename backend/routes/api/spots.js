@@ -108,7 +108,9 @@ router.post('/:spotId/book', validateBooking, asyncHandler(async (req, res, next
   const bookings = await db.Booking.findAll({
     where: {
       userId
-    }
+    },
+    include: db.Spot,
+    order: [['updatedAt', 'DESC']]
   })
 
   return res.json({ bookings })

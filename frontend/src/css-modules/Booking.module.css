@@ -76,7 +76,6 @@ li::marker {
 
 #bookingBtn {
     width: 100%;
-    margin-top: 9%;
     background-color: #16131E  ;
     color: #C1BDBE ;
     border: 2px solid #C1BDBE;
@@ -90,6 +89,8 @@ li::marker {
 
 #formDiv {
     border-radius: 5px;
+    background-color: #C1BDBE;
+    border: 2px solid #16131E;
 }
 
 .errors {

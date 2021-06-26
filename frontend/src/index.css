@@ -10,7 +10,7 @@ body {
 }
 
 button {
-    background-color: #CED7E8   ;
+    background-color: #C1BDBE;
     color: #16131E ;
     font-weight: 800;
     padding: 5px;
@@ -24,7 +24,7 @@ button {
 
 button:hover {
     background-color: #16131E  ;
-    color: #CED7E8 ;
+    color: #C1BDBE ;
 }
 
 #root {

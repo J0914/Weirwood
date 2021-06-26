@@ -17,15 +17,15 @@ const router = express.Router();
         const { userId, spotId, reviewId, body } = req.body;
     
         const review = await db.Review.findByPk(reviewId);
-
-        await review.update({userId, spotId, body})
-    
+        
         if (!review) {
-        const err = new Error('Review not found');
-        err.status = 404;
-        err.title = 'Review not found';
-        err.errors = ['Could not find review. Please try again!'];
-        return next(err);
+            const err = new Error('Review not found');
+            err.status = 404;
+            err.title = 'Review not found';
+            err.errors = ['Could not find review. Please try again!'];
+            return next(err);
+        } else {
+            await review.update({userId, spotId, body})
         }
     
         const reviews = await db.Review.findAll({
