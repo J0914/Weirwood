@@ -138,24 +138,49 @@
 
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
     #welcomeMsg {
-        font-size: 1.1em;
-    }
-}
-@media screen and (max-width: 540px) {
-    #welcomeMsg {
-        font-size: .9em;
+        font-size: 1.7em;
+        top: -30px;
+        height: fit-content;
     }
 
+    #splashH1 {
+        margin-top: 2%;
+        font-size: 1.6em;
+    }
+    
+    #header {
+        top: 4px;
+    }
+    
+    #gm {
+        font-size: .8em;
+    }
+    
     .splashBody {
-        top: -40px;
+        top: -3vh;
+    }
+
+    #spots {
+        width: 97.3%;
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #welcome {
+        height: 65vh;
+        top: 0;
     }
 }
-@media screen and (max-width: 370px) {
+
+@media screen and (max-width: 481px) {
     #welcomeMsg {
-        font-size: .7em;
+        font-size: 1em;
         position: relative;
+        top: 5px;
         height: fit-content;
     }
 
@@ -179,11 +204,69 @@
     #spots {
         width: 97.3%;
         padding: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #welcome {
+        height: 65vh;
+        box-sizing: border-box;
+        top: 0;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    #welcomeMsg {
+        font-size: .8em;
+        position: relative;
+        box-sizing: border-box;
+        height: fit-content;
+        margin: 1%;
+    }
+
+    #splashH1 {
+        margin-top: 2%;
+        font-size: 1.1em;
+    }
+
+    #header {
+        top: 4px;
+    }
+
+    #gm {
+        font-size: .8em;
+    }
+
+    .splashBody {
+       top: 0;
+    }
+
+    #spots {
+        width: 97.3%;
+        height: fit-content;
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
     }
 
     #welcome {
         height: 65vh;
         top: 0;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    #welcomeMsg {
+        font-size: .8em;
+        position: relative;
+        top: .2vh;
+        box-sizing: border-box;
+        height: fit-content;
+        margin: 1%;
     }
 }
 

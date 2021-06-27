@@ -23,14 +23,14 @@ function LoginForm() {
   return (
     <div className={styles.formDiv}>
         <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.header}>Welcome Back!</h1>
-        {errors.length ? 
-        <div className={styles.errors}>
-            <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-        </div> : null
-        }
+          <h1 className={styles.header}>Welcome Back!</h1>
+          {errors.length ? 
+          <div className={styles.errors}>
+              <ul>
+                  {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+              </ul>
+          </div> : null
+          }
         <div className={styles.inputs}>
             <label>
                 Username or Email:

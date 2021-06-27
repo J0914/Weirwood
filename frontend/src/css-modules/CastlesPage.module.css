@@ -38,5 +38,21 @@
     padding: 10px;
 }
 
-
+@media screen and (max-width: 800px) {
+   
+}
+@media screen and (max-width: 481px) {
+   
+}
+@media screen and (max-width: 376px) {
+    #spots {
+        width: 90vw;
+        display: flex;
+        align-items: flex-start;
+        padding: 1px;
+    }
+   
+}
+@media screen and (max-width: 330px) {
+}
 

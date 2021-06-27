@@ -19,7 +19,9 @@ const Spots = ({allSpots}) => {
                                 <label id={styles.perWeek} className={styles.spotLabel}>weekly</label>
                             </div>
                             <div id={styles.rightSide}>
+                                <div id={styles.titleDiv}>
                                 <label className={styles.spotLabel}>{spot.title}</label>
+                                </div>
                                 <label id={styles.location} className={styles.spotLabel}>{spot.location}</label>
                             </div>
                         </div>
