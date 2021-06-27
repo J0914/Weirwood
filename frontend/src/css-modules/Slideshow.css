@@ -88,19 +88,21 @@ margin: 5px;
     border-radius: 5px;
 }
 
-.textDiv {
+/* .textDiv {
     width: 100%;
     position: relative; 
     display: flex;
     align-items: center;
     z-index: 2;
-    border-radius: 5px;   
-}
+    border-radius: 5px; 
+    justify-content: space-between;  
+} */
 
 .spotImg .textDiv {
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 5px 5px 0 0 ;
     width: fit-content;
     height: fit-content;
     display: none;
@@ -110,11 +112,12 @@ margin: 5px;
 
 .spotImg:hover .textDiv {
     display: block;
-    background: rgba(22,19,30, .6);  
+    background: rgba(22,19,30, .6); 
+    width: 100%; 
 }
 
 .description {
-    font-size: 1.3em;
+    font-size: .7em;
     overflow-y: scroll;
     height: 205px;
     position: relative;
@@ -124,7 +127,7 @@ margin: 5px;
 }
 
 .spotLabel {
-    font-size: 2em;
+    font-size: 1em;
     display: flex;
     position: relative;
     right: 8px;
@@ -132,14 +135,15 @@ margin: 5px;
     text-align: right;
 }
 
-.textHeaderDiv {
+.textOverlay {
     border-radius: 50px;
-    /* background-color: rgba(22,19,30, .8); */
+    
     margin: 5px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     color: #C1BDBE ;
+    width: 100%;
 }
 
 #leftSide {
@@ -157,14 +161,14 @@ margin: 5px;
 }
 
 #price {
-    font-size: 1.2em;
+    font-size: .5em;
     margin: 5px;
     margin: 0;
     margin-top: 10px;
 }
 
 #perWeek {
-    font-size: .7em;
+    font-size: .3em;
     text-align: left;
     margin: 0;
 }
@@ -172,7 +176,7 @@ margin: 5px;
 
 #location {
     margin: 0;
-    font-size: 1em;
+    font-size: .5em;
 
 }
 

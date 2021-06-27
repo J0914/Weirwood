@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import styles from '../../css-modules/Login.module.css'
 
-function LoginForm() {
+function LoginForm({setShowModal}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +18,14 @@ function LoginForm() {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
+  }
+
+  const demo = () => {
+    dispatch(sessionActions.login({ 
+      credential: 'RoyalFoodTaster',
+      password: 'password' 
+    }))
+
   }
 
   return (
@@ -51,7 +59,10 @@ function LoginForm() {
             required
             />
         </div>
+        <div id={styles.loginBtnsDiv}>
         <button className={styles.submitBtn} type="submit">Log In</button>
+        <button className={styles.submitBtn} onClick={demo}>Demo User</button>
+        </div>
         </form>
     </div>
   );

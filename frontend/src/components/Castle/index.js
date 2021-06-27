@@ -33,6 +33,7 @@ export default function Castle () {
                     <div id={styles.header}>
                         <div id={styles.headTop}>
                             <h2 id={styles.title}> {castle.title} </h2>
+                            <h3 id={styles.castleLocation}>{castle.location}</h3>
                         </div>
                     </div>
                     <div id={styles.imgContainer}>
@@ -45,10 +46,9 @@ export default function Castle () {
                     <div id={styles.formWrapper}>
                         <div id={styles.headBottom}>
                             <label id={styles.price}>{castle.price} Gold Dragons</label>
-                            <h3 id={styles.location}>{castle.location}</h3>
                         </div>
                         <div id={styles.formDiv}>
-                        <BookingFormModal />
+                            <BookingFormModal />
                         </div>
                     </div>
                     </div>

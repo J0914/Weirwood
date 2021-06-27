@@ -8,6 +8,16 @@ footer {
     box-shadow: -1px -1px 25px -5px #16131E ;
     color: #C1BDBE ;
     border-top: 1px solid #16131E ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a {
+    font-size: 2em;
+    color: white;
+    margin: auto;
 }
 
 @media screen and (max-width: 780px) {

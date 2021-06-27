@@ -9,7 +9,7 @@ function DeleteModalProvider ({reviewId}) {
 
   return (
     <>
-      <button className={styles.navLink} onClick={() => setShowModal(true)}>Delete</button>
+      <button className={styles.deleteBtn} onClick={() => setShowModal(true)}>Delete</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <DeleteModal setShowModal={setShowModal} reviewId={reviewId} />

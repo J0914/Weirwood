@@ -76,10 +76,11 @@ form {
     border: none;
     box-sizing: border-box;
     padding: 2px;
+    font-size: 2em;
 }
 
 #bookingBtn {
-    width: 100%;
+    width: 50%;
     background-color: #16131E  ;
     color: #C1BDBE ;
     border: 2px solid #C1BDBE;

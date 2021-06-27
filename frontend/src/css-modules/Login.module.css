@@ -34,6 +34,18 @@ li {
     text-decoration: none;
 }
 
+.deleteBtn, .editReviewBtn {
+    font-size: 2.5em;
+    margin: 2px;
+}
+
+#loginBtnsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
 .navLink:hover { 
     background-color: #16131E  ;
     color: #C1BDBE ;
@@ -117,6 +129,7 @@ li {
     margin: 2px 0;
     border-radius: 5px;
     border: none;
+    margin: 2%;
 }
 
 .submitBtn:hover {

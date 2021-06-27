@@ -13,10 +13,10 @@ const Splash = () => {
             </div>
             <div id={styles.welcome}>
                 <p id={styles.welcomeMsg}> 
-                They say that every person's home is their castle, how about vacationing in
-                real one? Here at Weirwood we offer the best selection of castles
-                in Westeros for your next vacation. Browse our selection and make one of our
-                castles your temporary home!
+                Welcome to Weirwood, where fans of George R.R. Martin's 'Game of Thrones' series can
+                come together to discuss and hopefully spend their next vacay in the amazing 
+                castles their favorite characters lived in! This site includes some of the creators
+                favorite characters and quotes from those characters. I hope you enjoy your stay!
                 </p>
                 <div id={styles.spots}>
                 <Slideshow />

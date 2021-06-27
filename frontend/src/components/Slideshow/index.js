@@ -44,7 +44,7 @@ function Slideshow() {
               <Link to={`/castles/${spot.id}`}>
                 <div className='spotImg' key={spot.id} >
                       <div className='textDiv'>
-                          <div className='textHeaderDiv'>
+                          <div className='textOverlay'>
                             <div id='leftSide'>
                               <label id='price' className='spotLabel'>{spot.price} Gold Dragons</label>
                               <label id='perWeek' className='spotLabel'>weekly</label>
@@ -54,7 +54,6 @@ function Slideshow() {
                               <label id='location' className='spotLabel'>{spot.location}</label>
                             </div>
                           </div>
-                          {/* <p className='description'>{spot.description}</p> */}
                       </div>
                       <img className='img' src={spot.Images[0].url} alt={spot.title}></img>
                   </div>

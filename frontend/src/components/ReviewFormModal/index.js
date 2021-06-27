@@ -9,7 +9,7 @@ function ReviewFormModal({reviewId, body}) {
 
   return (
     <>
-      <button className={styles.navLink} onClick={() => setShowModal(true)}>Edit</button>
+      <button className={styles.editReviewBtn} onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ModalReviewForm setShowModal={setShowModal}reviewId={reviewId} reviewBody={body} />

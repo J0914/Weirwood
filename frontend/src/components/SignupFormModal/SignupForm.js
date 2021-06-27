@@ -23,6 +23,8 @@ function SignupForm() {
     
   }
 
+ 
+
   return (
     <div className={styles.formDiv}>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -72,7 +74,9 @@ function SignupForm() {
             required
             />
         </div>
+        <div id={styles.signupBtnsDiv}>
         <button className={styles.submitBtn} type="submit">Sign Up</button>
+        </div>
         </form>
     </div>
   );
