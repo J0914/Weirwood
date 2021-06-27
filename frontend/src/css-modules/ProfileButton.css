@@ -44,13 +44,18 @@ label {
     font-size: 1.8em;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 780px) {
+    
+}
+@media screen and (max-width: 540px) {
+    
+}
+@media screen and (max-width: 370px) {
     #btn {
-        height: 75px;
-        width: 75px;
-        font-size: 3em;
+        height: 80%;
+        width: 60%;
+        font-size: 1em;  
     }
-
 }
 
 

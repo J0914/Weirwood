@@ -18,7 +18,7 @@
 
 #header {
     grid-area: head;
-    
+    height: fit-content;
 }
 
 #welcomeMsg {
@@ -37,6 +37,8 @@
 
 #welcome {
     grid-area: p;
+    position: relative;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,7 +69,7 @@
 
 .splashBody {
     display: grid; 
-    grid-template-rows: 200px auto;
+    grid-template-rows: fit-content auto;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas: 
     '. head .'
@@ -82,11 +84,13 @@
     width: 100%;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1020px) {
 
     .splashBody {
         display: flex;
         justify-content: center;
+        align-items: center;
+        top: 0;
     }
 
     #header {
@@ -94,41 +98,93 @@
     }
     
     #welcomeMsg {
-        width: 500px;
-        margin-top: 5%;
+        position: relative;
+        width: 85%;
+        height: 10vh;
+        font-size: 1.3em;
     }
 
     #welcome {
+        position: relative;
+        top: 5%;
         height: 70vh;
         width: 95vw;
         margin: 2%;
+        padding: .5%
     }
 
     #splashH1 {
-        
-        margin-bottom: 2px;
+        margin: 2px;
         white-space: normal;
         width: 100%;
         text-align: right;
+        font-size: 1.6em;
     }
 
     #header {
+        position: relative;
+        top: 7%;
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
         margin-right: 2%;
         margin-bottom: 3%;
+        
+    }
+
+    #spots {
+        width: 90%;
     }
 
 }
 
-/* @media screen and (max-width: 580px) {
-    .splashBody {
-        position: absolute;
-        top: 250px;
-        display: grid; 
-        grid-template-rows: 120px 120px auto;
-        grid-template-columns: 1fr;
+@media screen and (max-width: 780px) {
+    #welcomeMsg {
+        font-size: 1.1em;
     }
-} */
+}
+@media screen and (max-width: 540px) {
+    #welcomeMsg {
+        font-size: .9em;
+    }
+
+    .splashBody {
+        top: -40px;
+    }
+}
+@media screen and (max-width: 370px) {
+    #welcomeMsg {
+        font-size: .7em;
+        position: relative;
+        height: fit-content;
+    }
+
+    #splashH1 {
+        margin-top: 2%;
+        font-size: 1.1em;
+    }
+
+    #header {
+        top: 4px;
+    }
+
+    #gm {
+        font-size: .8em;
+    }
+
+    .splashBody {
+       top: 0;
+    }
+
+    #spots {
+        width: 97.3%;
+        padding: 1%;
+    }
+
+    #welcome {
+        height: 65vh;
+        top: 0;
+    }
+}
+
 

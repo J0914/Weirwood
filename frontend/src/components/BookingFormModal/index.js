@@ -13,7 +13,7 @@ function BookingFormModal() {
       <button id={styles.bookingBtn} className={styles.navLink} onClick={() => setShowModal(true)}>Book a Stay!</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <BookingForm />
+          <BookingForm setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

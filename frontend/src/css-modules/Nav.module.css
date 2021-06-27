@@ -65,14 +65,12 @@ p {
 }
 
 #signup {
-    display: grid;
-    grid-area: auth;
+    /* grid-area: auth; */
     white-space: nowrap;
 }
 
 #login {
-    display: grid;
-    grid-area: auth;
+    /* grid-area: auth; */
     white-space: nowrap;
 }
 
@@ -161,118 +159,19 @@ p {
     margin-right: 10px;
 }
 
-
-
-@media screen and (max-width: 960px) {
-
-    #authBtns {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-    }
-
-    .homeSpan {
-        grid-area: home;
-        justify-content: flex-start;
-    }
-
-    .authSpan {
-        grid-area: auth;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    .homeSpan, .authSpan {
-        height: 60px;
-        display: flex;
-        width: fit-content;
-    }
-
-    #siteName {
-        font-size: 3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #home, #castles, #logout, #profile {
-        height: auto;
-        width: auto;
-        font-size: 3.5em;
-    }
-
-    #signup, #login {
-        height:auto;
-        width: auto;
-        font-size: 2em;
-    }
-
-    #authBtns {
-        margin: 1px;
-        width: 140px;
-        flex-direction: column;
-    }
-
-    .navLink {
-        margin: 3px;
-        text-align: center;
-    }
-
-    .nav {
-        margin: 0;
-        height: 150px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-    }
-
-    #dropdownDiv {
-        display: flex;
-        justify-content: flex-end; 
-        margin-right: 10px;       
-    }
-
-    #siteName {
-        height: 100px;
-        font-size: 4.5em;
-    }
-
-    .navDropdown {
-        top: 120px;
-    }
+@media screen and (max-width: 780px) {
+    
 }
-
-/* @media screen and (max-width: 580px) {
-
+@media screen and (max-width: 540px) {
+    
+}
+@media screen and (max-width: 370px) {
     .nav {
-        height: 275px;
-        width: 100%;
-        min-width: 320px;
-        position: sticky;
-        right: 0;
-    }
-
-    .homeSpan {
-        position: relative;
-        top: -40px;
-    }
-
-    .authSpan {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        top: -50px;
-    }
-
-    #home, #login, #signup {
-        width: 15em;
-        height: 2em;
-        margin: 1px;
-        text-align: center;
+        height: 9vh;
         
     }
-} */
+
+    #siteName {
+        font-size: 1.5em;
+    } 
+}

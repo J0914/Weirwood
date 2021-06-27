@@ -24,10 +24,14 @@ ul {
     list-style-type: none;
 }
 
-
+#formDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .submitBtn {
-    width: 85.5%;
+    width: 102.3%;
     height: 1.5em;
     font-size: 1.5em;
     padding: 2px;
@@ -54,8 +58,8 @@ ul {
 #textarea {
     position: relative;
     overflow-wrap: wrap;
-    width: 84%;
-    height: 100px;
+    width: 100%;
+    height: 175px;
     overflow: auto;
     border-radius: 5px 5px 0 0;
     resize: none;

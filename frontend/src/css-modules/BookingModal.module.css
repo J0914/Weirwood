@@ -45,6 +45,9 @@
     overflow-x: hidden;
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
     border: 1px solid #C1BDBE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .label {
@@ -55,10 +58,10 @@
 }
 
 .p {
-    color: #16131E;
+    color: white;
     font-size: 1.4em;
-    margin-top: 5px;
-    background-color:  #C1BDBE;
+    margin: 5px 0;
+    /* background-color:  #C1BDBE; */
     /* text-align: right; */
     width: 100%;
     border-radius: 3px;
@@ -67,17 +70,18 @@
 #datesContainer {
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
     justify-content: space-evenly;
 }   
 
 #bookingDiv {
-    background-color: #16131E;
+    background-color: #1C2F3E;
     border-radius: 4px;
     padding: 2%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* align-items: flex-end; */
+    margin: 1%;
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
 
 }
@@ -85,16 +89,16 @@
 #deleteDiv {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 #delete {
     background-color: #C1BDBE;
     color:  #16131E;
     border: 1px solid #16131E;
-    height: fit-content;
+    height: 40px;
     width: fit-content;
     font-size: 1.5em;
-    margin-top: 2%;
 }
 
 #delete:hover {
@@ -107,16 +111,16 @@
     position: relative;
     width: 90%;
     margin: 0 2%;
-    padding: 3%;
+    padding: 1px;
     background-color: #C1BDBE;
     border-radius: 4px;
     box-shadow: .5px .5px 0.625rem -2px #C1BDBE ;
 
 }
 
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
     #bookingBtn {
         height: 75px;
         width: 80px;
     }
-}
+} */

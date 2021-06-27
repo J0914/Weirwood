@@ -4,7 +4,7 @@ import * as bookingsActions from '../../store/bookings'
 
 import styles from '../../css-modules/Booking.module.css'
 
-export default function BookingForm () {
+export default function BookingForm ({setShowModal}) {
     const user = useSelector(state => state.session.user)
     const castle = useSelector(state => state.spots.currentCastle)
     const dispatch = useDispatch();
@@ -36,15 +36,24 @@ export default function BookingForm () {
             dispatch(bookingsActions.createBooking({ spotId, userId, selectedStart, selectedEnd }))
             .catch(async (res) => {
                 const data = await res.json();
-                if (data && data.errors) {
-                    setErrors(data.errors);
-                } else if (data) setIsSuccess(true)
+                if (data && data.errors) setErrors(data.errors);    
             })
-    
+
+            if (errors.length === 0) {
+                setIsSubmitted(true);
+                setIsSuccess(true);
+            }
+            
         } else {
             setErrors(['You must be logged in to create a booking!'])
-        }  
+        } 
+        
+        setTimeout (() => {
+            setShowModal(false)
+        }, 2500)
     }
+
+    console.log(isSubmitted)
     
     useEffect(() => {
         if (errors.length > 0) setIsSuccess(false);
@@ -52,7 +61,7 @@ export default function BookingForm () {
     },[isSubmitted, errors])
 
     return (
-        <div id={styles.formDiv} >
+        <div id={styles.bookingFormDiv} >
             <form id={styles.bookingForm} onSubmit={handleBookingSubmit}>
                 <h3 className={styles.header}> Select your dates! </h3>
                 {errors ? 
@@ -66,7 +75,7 @@ export default function BookingForm () {
                 {isSuccess ? 
                 <div className={styles.errors}>
                      <ul>
-                        <li className={styles.li}>'Review Posted!'</li>
+                        <li className={styles.li}>'Booking Successful!'</li>
                     </ul> 
                 </div> 
                     : null
@@ -92,8 +101,8 @@ export default function BookingForm () {
                         onChange={(e) => setSelectedEnd(e.target.value)}
                         required
                     />
-                    <button className={styles.submitBtn} type="submit">Book!</button>
                 </div>
+                    <button className={styles.submitBtn} type="submit">Book!</button>
             </form>
         </div>
     )

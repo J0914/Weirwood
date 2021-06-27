@@ -1,10 +1,24 @@
 footer {
     position: absolute;
+    font-size: 1em;
     z-index: 3;
     bottom: 0em;
     width: 100%;
     background-color: #1C2F3E  ;
-    box-shadow: -1px -1px 25px 0px #16131E ;
+    box-shadow: -1px -1px 25px -5px #16131E ;
     color: #C1BDBE ;
     border-top: 1px solid #16131E ;
+}
+
+@media screen and (max-width: 780px) {
+    
+}
+@media screen and (max-width: 540px) {
+    
+}
+@media screen and (max-width: 370px) {
+    footer {
+        height: 5vh;
+        font-size: .5em;
+    }
 }

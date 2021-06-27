@@ -6,7 +6,7 @@ import styles from '../../css-modules/Spots.module.css';
 const Spots = ({allSpots}) => {
 
     return (
-        <div id={styles.spots}> 
+        <div id={styles.spotsDiv}> 
             {allSpots && allSpots.map(spot => (
                 <Link key={spot.id} className={styles.link}  to={`/castles/${spot.id}`}>
                     <div className={styles.spotContainer}>
@@ -26,7 +26,7 @@ const Spots = ({allSpots}) => {
                     </div>
                 </Link>
             ))}
-            </div>
+        </div>
     )
 }
 

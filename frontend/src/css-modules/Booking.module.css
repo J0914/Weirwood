@@ -17,10 +17,11 @@ input {
 }
 
 label {
-    width: 100%;
+    width: fit-content;
     padding: 1px;
     margin: 1px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 ul {
@@ -36,8 +37,8 @@ li {
     text-decoration: none;
 }
 
-li::marker {
-    color: white;
+form {
+    
 }
 
 .header {
@@ -47,6 +48,9 @@ li::marker {
     margin-top: 0;
     margin-bottom: 40px;
     padding: 5px;
+    font-size: 2.5em;
+    width: fit-content;
+    border-bottom: 2px solid #16131E;
 }
 
 
@@ -54,10 +58,10 @@ li::marker {
     padding: 10px;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     width: 450px;
-    
+    margin-bottom: 8px;
 }
 
 .submitBtn {
@@ -87,10 +91,28 @@ li::marker {
     border: 2px solid #16131E;
 }
 
-#formDiv {
-    border-radius: 5px;
-    background-color: #C1BDBE;
-    border: 2px solid #16131E;
+#bookingFormDiv {
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #1C2F3E;
+    color: #C1BDBE;    
+    box-shadow: .2px .2px 0.3rem -2px #C1BDBE ;
+    border: 1px solid #C1BDBE;
+}
+
+#bookingForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#reviewFormDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .errors {
@@ -113,7 +135,7 @@ li::marker {
     }
 }
 
-@media screen and (max-width: 769px) {
+/* @media screen and (max-width: 769px) {
     .form-div {
         top: 150px;
     }
@@ -121,4 +143,4 @@ li::marker {
     .form {
         margin-top: 30px;
     }
-}
+} */

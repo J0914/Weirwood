@@ -21,6 +21,7 @@ label {
     padding: 1px;
     margin: 1px;
     font-weight: bold;
+    color: #C1BDBE;
 }
 
 ul {
@@ -36,13 +37,13 @@ li {
 
 .navLink:hover { 
     background-color: #16131E  ;
-    color: #CED7E8 ;
+    color: #C1BDBE ;
 }
 .navLink {
     font-family: Cinzel;
     margin-left: 10px;
     text-decoration: none;
-    background-color: #CED7E8 ;
+    background-color: #C1BDBE ;
     color: #16131E ;
     font-weight: 800;
     border-radius: 5px;
@@ -54,6 +55,7 @@ li {
     padding-left: 7px;
     padding-right: 7px;
     align-items: center;
+    font-size: 1.5em;
 }
 
 
@@ -65,6 +67,7 @@ li {
     margin-top: 0;
     margin-bottom: 60px;
     padding: 1px;
+    color: #C1BDBE;
 }
 
 .formDiv {
@@ -97,7 +100,7 @@ li {
     height: 650px;
     margin: 4em;
     box-shadow: 0.0625rem 0.0625rem 0.625rem -2px #16131E;
-    background-color: #CED7E8;
+    background-color: #1C2F3E;
 }
 
 .inputs {
@@ -111,13 +114,19 @@ li {
 
 .submitBtn {
     width: 75%;
-    background-color: #1C2F3E;
+    background-color: #16131E;
     color: #C1BDBE;
     font-weight: 800;
     padding: 5px;
     margin: 2px 0;
     border-radius: 5px;
     border: none;
+}
+
+.submitBtn:hover {
+    background-color: #C1BDBE;
+    color: #16131E;
+
 }
 
 .errors {
@@ -131,12 +140,17 @@ li {
     padding-bottom: 30px;
 }
 
-@media screen and (max-width: 840px) {
-    .formDiv {
-        top: 150px;
-    }
-
-    .form {
-        margin-top: 30px;
+@media screen and (max-width: 780px) {
+    
+}
+@media screen and (max-width: 540px) {
+    
+}
+@media screen and (max-width: 370px) {
+    .navLink {
+        width: fit-content;
+        height: 5vh;
+        font-size: .8em;
+        white-space: nowrap;
     }
 }

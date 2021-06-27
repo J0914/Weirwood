@@ -57,15 +57,15 @@ margin: 5px;
 
 .spotImg {
     grid-area: img;
-    width: 550px;
-    height: 300px;
+    width: fit-content;
+    height: fit-content;
     margin: 5px;
     display: flex;
     position: relative;
     border-radius: 3px;
     box-sizing: border-box;
     border-radius: 5px;
-    box-shadow: .4rem .4rem 0.625rem -4px #16131E ;
+    box-shadow: .4rem .4rem 0.625rem -6px #16131E ;
     background-color: #16131E  ;
     max-width: 828px;
 }
@@ -84,7 +84,6 @@ margin: 5px;
     'img'
     'info';
     background-color: rgba(193,189,190, .8);
-    box-shadow: .4rem .4rem 0.625rem -4px #16131E ;
     margin: 3px;
     border-radius: 5px;
 }
@@ -102,8 +101,8 @@ margin: 5px;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     display: none;
     color: #C1BDBE ;
     white-space:normal;
@@ -175,4 +174,17 @@ margin: 5px;
     margin: 0;
     font-size: 1em;
 
+}
+
+@media screen and (max-width: 780px) {
+    
+}
+@media screen and (max-width: 540px) {
+    
+}
+@media screen and (max-width: 370px) {
+    .img {
+        height: 150px;
+        width: 275px;
+    }
 }

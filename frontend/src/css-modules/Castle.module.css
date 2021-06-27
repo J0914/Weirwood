@@ -41,6 +41,8 @@
 #underImgDiv {
     grid-area: ui;
     display: flex;
+    flex-direction: column;
+
     justify-content: space-between;
     max-width: 736px;
 }
@@ -55,7 +57,7 @@
     height: 17vh;
     background-color:rgba(22,19,30, 1);
     border: 1px solid #16131E ;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 5px 0 0;
     color: #C1BDBE;
     width: 100%;
     overflow: auto;
@@ -141,16 +143,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 158px;
+    height: fit-content;
     position: relative;
+    margin-bottom: 10px;
+
     top: 1px;
-    width: 100%; 
-    border-radius: 0 5px 5px 0;
+    width: 97.5%;
+    border-radius: 0 0 5px 5px;
     padding: 10px;
     box-shadow: 1px 1px 1rem -2px #1C2F3E ;
 }
 
-@media screen and (max-width: 1220px) {
+/* @media screen and (max-width: 1220px) {
     #underImgDiv {
         flex-direction: column;
     }
@@ -171,9 +175,9 @@
         border-radius: 5px 5px 0 0;
     }
     
-}
+} */
 
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
     #castleContainer {
         position: relative;
         height: 77vh;
@@ -183,4 +187,4 @@
     }
 
     
-}
+} */

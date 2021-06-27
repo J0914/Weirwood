@@ -47,6 +47,10 @@ export default function ReviewForm () {
     useEffect(() => {
         if (errors.length > 0) setIsSuccess(false);
         if (isSubmitted && errors.length === 0) setIsSuccess(true);
+
+        setTimeout (() => {
+            setIsSuccess(false)
+        }, 3000)
     },[isSubmitted, errors])
     
 

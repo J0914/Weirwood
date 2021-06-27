@@ -17,9 +17,7 @@ button {
     border-radius: 5px;
     border: none;
     font-family: Cinzel;
-    font-size: 2em;
     box-sizing: border-box;
-
 }
 
 button:hover {
@@ -51,29 +49,26 @@ h1, h2, h3 {
     font-family: Raleway;
 }
 
-::-webkit-scrollbar-track
+/* ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #1C2F3E ;
     border-radius: 3px;
-    border: 1px solid #16131E;
-
-
-}
+    
+} */
 ::-webkit-scrollbar
 {
-	width: 6px;
-	background-color: #C1BDBE ;
-    border-radius: 3px;
-
+	width: 0px;
+	/* background-color: #C1BDBE ;
+    border-radius: 3px; */
 }
 
-::-webkit-scrollbar-thumb
+/* ::-webkit-scrollbar-thumb
 {
 	background-color: #16131E ;
     border-radius: 3px;
 
-}
+} */
 
 
 
