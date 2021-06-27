@@ -11,7 +11,7 @@
 .spotImg {
     grid-area: img;
     width: 100%;
-    height: 300px;
+    height: 30vh;
     display: flex;
     position: relative;
     border-radius: 30px;
@@ -48,12 +48,12 @@
 
 #spotsDiv {
     position: relative;
-    padding: 25px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow: auto;
     height: fit-content;
 }
 
@@ -66,7 +66,9 @@
     'img'
     'info';
     margin: 3px;
-    width: 53vw;
+    width: 550px;
+    max-width: 550px;
+    height: fit-content;
     padding: 0;
     grid-gap: 0;
     border-radius: 30px;
@@ -132,17 +134,100 @@
 
 
 @media screen and (max-width: 800px) {
-   
+    #spotsDiv {
+        width: 95vw;
+        height: 460vh;
+        padding: 1%;
+    }
+
+    .spotContainer {
+        position: relative;
+        width: 75vw;
+        height: 35vh;
+        margin-top: 2%;
+    }
+
+    .spotImg {
+        width: 75vw;
+        height: 27.1vh;
+    }
+    
+
 }
 @media screen and (max-width: 481px) {
-   
+    #spotsDiv {
+        width: 95vw;
+        height: 460vh;
+        padding: 1%;
+    }
+    
+    .spotContainer {
+        position: relative;
+        width: 85vw;
+        height: 35vh;
+        margin-top: 2%;
+    }
+
+    .spotImg {
+        width: 85vw;
+        height: 25vh;
+    }
+    
+    .textHeaderDiv {
+        width: 85vw;
+        height: 9.9vh
+    }
+
+    label {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    .spotLabel {
+        font-size: 1.2em;
+        margin-right: 0;
+        text-align: right;
+        width: 100%;
+    }
+
+
+    #price {
+        font-size: .9em;
+        text-align: left;
+    }
+
+    #perWeek {
+        font-size: .9em;
+        text-align: left;
+    }
+
+    #leftSide{
+        box-sizing: border-box;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5px;
+    }
+
+    #rightSide {
+        padding: 0;
+    }
+
+    #location {
+        font-size: .8em;
+        padding: 0;
+    }
+    
+    #titleDiv {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 @media screen and (max-width: 376px) {
     #spotsDiv {
         width: 95vw;
-        height: 95vh;
+        height: 460vh;
         padding: 1%;
-        display: inline-block;
     }
     
     .spotContainer {
@@ -204,7 +289,7 @@
         display: flex;
         justify-content: flex-end;
     }
-   
+
 }
 @media screen and (max-width: 330px) {
     

@@ -42,7 +42,21 @@
    
 }
 @media screen and (max-width: 481px) {
-   
+    #spots {
+        width: 90vw;
+        display: flex;
+        align-items: flex-start;
+        padding: 1px;
+    }
+
+    .btnContainer {
+        margin-left: 30%;
+        margin-bottom: 2%;
+    }
+
+    #castlesContainer {
+        top: 15px;
+    }
 }
 @media screen and (max-width: 376px) {
     #spots {
@@ -51,8 +65,16 @@
         align-items: flex-start;
         padding: 1px;
     }
+
+    .btnContainer {
+        margin-left: 30%;
+        margin-bottom: 2%;
+    }
+
+    #castlesContainer {
+        top: 15px;
+    }
    
 }
-@media screen and (max-width: 330px) {
-}
+
 
