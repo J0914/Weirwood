@@ -42,6 +42,8 @@ export default function ReviewForm () {
         } else {
             setErrors(['You must be logged in to create a review!'])
         }  
+
+        setBody('')
     }
 
     useEffect(() => {
