@@ -12,8 +12,8 @@
 
 .spotImg {
     grid-area: img;
-    width: 500px;
-    height: 300px;
+    width: 31.25rem;
+    height: 17rem;
     display: flex;
     position: relative;
     border-radius: 30px;
@@ -71,16 +71,16 @@
     grid-template-areas: 
     'img'
     'info';
-    margin: 3px;
-    width: 500px;
+    margin: 10px;
+    width: 50rem;
     max-width: 500px;
     height: fit-content;
     padding: 0;
     grid-gap: 0;
     border-radius: 30px;
-    border: 1px solid #C1BDBE ;
+    /* border: 1px solid #C1BDBE ; */
     box-shadow: .4rem .4rem 0.625rem -2px #16131E ;
-    background-color: #C1BDBE ;
+    /* background-color: #C1BDBE ; */
 }
 
 

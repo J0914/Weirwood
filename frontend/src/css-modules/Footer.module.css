@@ -1,8 +1,13 @@
 footer {
-    position: absolute;
+    grid-area: footer;
+    position: fixed;
     font-size: 1em;
     z-index: 3;
-    bottom: 0em;
+    bottom: 0px;
+    left: 0em;
+    right: 0em;
+    height: 55px;
+    margin-top: 50px;
     width: 100%;
     background-color: #1C2F3E  ;
     box-shadow: -1px -1px 25px -5px #16131E ;

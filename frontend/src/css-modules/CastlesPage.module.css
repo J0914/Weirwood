@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    top: 0px;
+    top: 0px; 
     padding-top: 20px;
     margin-top: 30px;
     height: 95vh;
@@ -30,12 +30,12 @@
     margin-top: 2%;
     height: fit-content;
     width: 100%;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     overflow: auto;
     position: relative;
     top: 0;
-    box-shadow: .5px .5px 0.625rem -2px #16131E ;
-    border: 1px solid rgba(193,189,190, 0.1);
+    /* box-shadow: .5px .5px 0.625rem -2px #16131E ;
+    border: 1px solid rgba(193,189,190, 0.1); */
     border-radius: 10px;
     padding: 10px;
 }
