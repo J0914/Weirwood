@@ -1,274 +1,92 @@
-#splashH1 {
-    position: relative;
-    /* top: 0px; */
-    font-size: 2em;
-    margin-top: 40px;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    height: auto;
-    border-bottom: 1px solid #16131E ;
-    white-space: nowrap;
-}
-
-#gm {
-    width: 100%;
-    text-align: right;
-}
-
-#header {
-    grid-area: head;
-    height: fit-content;
-}
-
-#welcomeMsg {
-    text-align:left;
-    color: #16131E ;
-    font-size: 1.8em;
-    width: 800px;
-    margin: 25px;
-    padding: 15px;
-    height: fit-content;
-    /* background-color:rgba( 206,215,232, 0.5); */
-    border-radius: 5px;
-    box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
-    border: .5px solid rgba(22,19,30s, 0.1)
-
-}
-
-#welcome {
-    grid-area: p;
-    position: relative;
-    top: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(22,19,30, 0.2);
-    border-radius: 10px;
-    height: 675px;
-    max-width: 875px;
-    box-shadow: .5px .5px 0.625rem -2px #16131E ;
-    border: 1px solid rgba(193,189,190, 0.1)
-
-}
-
-#spots {
+@media screen and (min-width: 1900px) and (min-height: 1000px) {
     
-    grid-area: spots; 
-    position: relative;
-    width: 100%;
-    height: 420px;
-    box-sizing: border-box;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    justify-content: center;
-}
-
-.splashBody {
-    display: grid; 
-    grid-template-rows: fit-content auto;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: 
-    '. head .'
-    '. p .';
-    justify-items: center;
-    /* align-items: center; */
-    flex-direction: column;
-    position: absolute;
-    top: 75px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-}
-
-@media screen and (max-width: 1020px) {
-
-    .splashBody {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-    }
-
-    #header {
-        white-space: normal;
-    }
-    
-    #welcomeMsg {
-        position: relative;
-        width: 85%;
-        height: 10vh;
-        font-size: 1.3em;
-    }
-
-    #welcome {
-        position: relative;
-        top: 5%;
-        height: 70vh;
-        width: 95vw;
-        margin: 2%;
-        padding: .5%
-    }
 
     #splashH1 {
-        margin: 2px;
-        white-space: normal;
+        position: relative;
+        /* top: 0px; */
+        font-size: 2em;
+        margin-top: 40px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        border-bottom: 1px solid #16131E ;
+        white-space: nowrap;
+    }
+
+    #gm {
         width: 100%;
         text-align: right;
-        font-size: 1.6em;
     }
 
     #header {
+        grid-area: head;
+        height: fit-content;
+    }
+
+    #welcomeMsg {
+        text-align:left;
+        color: #16131E ;
+        font-size: 1.8em;
+        width: 60vw;
+        margin: 2rem;
+        padding: 2rem;
+        height: fit-content;
+        /* background-color:rgba( 206,215,232, 0.5); */
+        border-radius: 5px;
+        box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
+        border: .5px solid rgba(22,19,30s, 0.1)
+
+    }
+
+    #welcome {
+        grid-area: p;
         position: relative;
-        top: 7%;
+        /* top: -50px; */
         display: flex;
-        justify-content: flex-end;
         flex-direction: column;
-        margin-right: 2%;
-        margin-bottom: 3%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(22,19,30, 0.2);
+        border-radius: 10px;
+        width: 70vw;
+        height: fit-content;
+        /* max-width: 875px; */
+        box-shadow: .5px .5px 0.625rem -2px #16131E ;
+        border: 1px solid rgba(193,189,190, 0.1)
+
+    }
+
+    #spots {
         
-    }
-
-    #spots {
-        width: 90%;
-    }
-
-}
-
-@media screen and (max-width: 800px) {
-    #welcomeMsg {
-        font-size: 1.7em;
-        top: -30px;
-        height: fit-content;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.6em;
-    }
-    
-    #header {
-        top: 4px;
-    }
-    
-    #gm {
-        font-size: .8em;
-    }
-    
-    .splashBody {
-        top: -3vh;
-    }
-
-    #spots {
-        width: 97.3%;
-        padding: 1%;
+        grid-area: spots; 
+        position: relative;
+        width: 60vw;
+        height: 50vh;
+        box-sizing: border-box;
+        padding: 30px;
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap:nowrap;
         justify-content: center;
     }
 
-    #welcome {
-        height: 65vh;
-        top: 0;
-    }
-}
-
-@media screen and (max-width: 481px) {
-    #welcomeMsg {
-        font-size: 1em;
-        position: relative;
-        top: 5px;
-        height: fit-content;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.1em;
-    }
-
-    #header {
-        top: 4px;
-    }
-
-    #gm {
-        font-size: .8em;
-    }
-
     .splashBody {
-       top: 0;
-    }
-
-    #spots {
-        width: 97.3%;
-        padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #welcome {
-        height: 65vh;
+        display: grid;
+        background-image: linear-gradient(#C1BDBE ,#1C2F3E);
         box-sizing: border-box;
-        top: 0;
-        padding: 20px;
+        grid-template-rows: 18vh fit-content;
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-areas: 
+        '. head .'
+        '. p .';
+        justify-items: center;
+        /* align-items: center; */
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0px;
+        height: 100vh;
+        width: 100vw;
     }
 }
-
-@media screen and (max-width: 376px) {
-    #welcomeMsg {
-        font-size: .8em;
-        position: relative;
-        box-sizing: border-box;
-        height: fit-content;
-        margin: 1%;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.1em;
-    }
-
-    #header {
-        top: 4px;
-    }
-
-    #gm {
-        font-size: .8em;
-    }
-
-    .splashBody {
-       top: 0;
-    }
-
-    #spots {
-        width: 97.3%;
-        height: fit-content;
-        padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 5%;
-    }
-
-    #welcome {
-        height: 65vh;
-        top: 0;
-    }
-}
-
-@media screen and (max-width: 330px) {
-    #welcomeMsg {
-        font-size: .8em;
-        position: relative;
-        top: .2vh;
-        box-sizing: border-box;
-        height: fit-content;
-        margin: 1%;
-    }
-}
-
-
