@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 import styles from '../../css-modules/Login.module.css'
 
-function LoginForm({setShowModal}) {
+function LoginForm({setShowModal, setShowSignupModal}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+
+  useEffect(() => {
+    setShowSignupModal(false)
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +36,9 @@ function LoginForm({setShowModal}) {
   return (
     <div className={styles.formDiv}>
         <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.btnWrapper}>
+          <button className={styles.closeBtn} onClick={() => setShowModal(false)}><AiFillCloseCircle /></button>
+          </div>
           <h1 className={styles.header}>Welcome Back!</h1>
           {errors.length ? 
           <div className={styles.errors}>

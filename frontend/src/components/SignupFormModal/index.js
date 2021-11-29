@@ -4,15 +4,14 @@ import SignupForm from './SignupForm';
 
 import styles from '../../css-modules/Signup.module.css'
 
-function SignupFormModal() {
-  const [showModal, setShowModal] = useState(false);
+function SignupFormModal({showModal, setShowModal, setShowLoginModal}) {
 
   return (
     <>
       <button className={styles.navLink} onClick={() => setShowModal(true)}>Signup</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <SignupForm setShowModal={setShowModal}/>
+          <SignupForm setShowModal={setShowModal} setShowLoginModal={setShowLoginModal} />
         </Modal>
       )}
     </>

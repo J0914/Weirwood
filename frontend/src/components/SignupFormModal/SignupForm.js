@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 import styles from '../../css-modules/Signup.module.css'
 
-function SignupForm() {
+function SignupForm({setShowModal, setShowLoginModal}) {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -22,6 +23,10 @@ function SignupForm() {
 //         });
     
 //   }
+
+    useEffect(() => {
+        setShowLoginModal(false)
+    }, [])
 
     const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +48,9 @@ function SignupForm() {
   return (
     <div className={styles.formDiv}>
         <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.btnWrapper}>
+          <button className={styles.closeBtn} onClick={() => setShowModal(false)}><AiFillCloseCircle /></button>
+        </div>
         <h1 className={styles.header}>Create Account!</h1>
         {errors.length ? 
         <div className={styles.errors}>
