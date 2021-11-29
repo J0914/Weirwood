@@ -12,7 +12,7 @@ function SignupFormModal() {
       <button className={styles.navLink} onClick={() => setShowModal(true)}>Signup</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <SignupForm />
+          <SignupForm setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

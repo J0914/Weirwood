@@ -12,16 +12,31 @@ function SignupForm() {
   const [confirmedPassword, setConfirmedPassword] = useState('')
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors([])
-    return dispatch(sessionActions.signUp({ username, email, password, confirmedPassword }))
-        .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-        });
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setErrors([])
+//     return dispatch(sessionActions.signUp({ username, email, password, confirmedPassword }))
+//         .catch(async (res) => {
+//         const data = await res.json();
+//         if (data && data.errors) setErrors(data.errors);
+//         });
     
-  }
+//   }
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+        if (password === confirmedPassword) {
+        setErrors([]);
+        await dispatch(
+            sessionActions.signUp({ email, username, password, confirmedPassword})
+        ).catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) {
+                setErrors(data.errors);
+            }
+        });
+        } 
+     };
 
  
 
