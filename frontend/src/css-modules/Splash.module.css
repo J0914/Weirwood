@@ -23,15 +23,15 @@
 
 #welcomeMsg {
     text-align:left;
-    color: #16131E ;
+    color: #C1BDBE ;
     font-size: 1.8em;
     width: 60vw;
     margin: 2rem;
     padding: 2rem;
     height: fit-content;
-    /* background-color:rgba( 206,215,232, 0.5); */
+    background-color:rgba(28, 47, 62, 1);
     border-radius: 5px;
-    box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
+    box-shadow: .2px .2px 0.3rem -2px #C1BDBE ;
     border: .5px solid rgba(22,19,30s, 0.1)
 
 }

@@ -35,7 +35,7 @@ button:hover {
     bottom: -100px;
     display: grid;
     grid-template-columns: 20px auto 20px;
-    grid-template-rows: 100vh 70px;
+    grid-template-rows: fit-content 100px;
     grid-template-areas: 
     '. rootitem .'
     'footer footer footer';
