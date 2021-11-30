@@ -152,6 +152,23 @@ li {
     padding-bottom: 30px;
 }
 
+.closeBtn {
+    background: none;
+    font-size: 2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+.closeBtn:hover {
+    background: none;
+}
+
+.btnWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media screen and (max-width: 800px) {
     .navLink {
         width: fit-content;

@@ -25,9 +25,9 @@
     text-align:left;
     color: #16131E ;
     font-size: 1.8em;
-    width: 800px;
-    margin: 25px;
-    padding: 15px;
+    width: 60vw;
+    margin: 2rem;
+    padding: 2rem;
     height: fit-content;
     /* background-color:rgba( 206,215,232, 0.5); */
     border-radius: 5px;
@@ -39,16 +39,16 @@
 #welcome {
     grid-area: p;
     position: relative;
-    top: -50px;
+    /* top: -50px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     background-color: rgba(22,19,30, 0.2);
     border-radius: 10px;
-    height: 675px;
-    max-width: 875px;
+    width: 70vw;
+    height: fit-content;
+    /* max-width: 875px; */
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
     border: 1px solid rgba(193,189,190, 0.1)
 
@@ -58,8 +58,8 @@
     
     grid-area: spots; 
     position: relative;
-    width: 100%;
-    height: 420px;
+    width: 60vw;
+    height: 50vh;
     box-sizing: border-box;
     padding: 30px;
     display: flex;
@@ -69,9 +69,10 @@
 }
 
 .splashBody {
-    display: grid; 
-    grid-template-rows: fit-content auto;
-    grid-template-columns: 1fr 4fr 1fr;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 18vh fit-content;
+    grid-template-columns: 1fr 6fr 1fr;
     grid-template-areas: 
     '. head .'
     '. p .';
@@ -81,194 +82,29 @@
     position: absolute;
     top: 75px;
     left: 0px;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
-@media screen and (max-width: 1020px) {
-
-    .splashBody {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 0;
+@media screen and (max-width: 1875px) and (max-height: 1000px) {
+    #welcomeMsg {
+        font-size: 1.5em;
     }
+    #welcome {
+        width: 80vw;
+    }
+    #spots {
+        width: 80vw;
+    }
+}
 
-    #header {
-        white-space: normal;
+@media screen and (max-height: 800px) {
+    #welcomeMsg {
+        font-size: 1.2em;
+    }
+    #welcome {
+        margin-bottom: 150px;
     }
     
-    #welcomeMsg {
-        position: relative;
-        width: 85%;
-        height: 10vh;
-        font-size: 1.3em;
-    }
-
-    #welcome {
-        position: relative;
-        top: 5%;
-        height: 70vh;
-        width: 95vw;
-        margin: 2%;
-        padding: .5%
-    }
-
-    #splashH1 {
-        margin: 2px;
-        white-space: normal;
-        width: 100%;
-        text-align: right;
-        font-size: 1.6em;
-    }
-
-    #header {
-        position: relative;
-        top: 7%;
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        margin-right: 2%;
-        margin-bottom: 3%;
-        
-    }
-
-    #spots {
-        width: 90%;
-    }
-
 }
-
-@media screen and (max-width: 800px) {
-    #welcomeMsg {
-        font-size: 1.7em;
-        top: -30px;
-        height: fit-content;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.6em;
-    }
-    
-    #header {
-        top: 4px;
-    }
-    
-    #gm {
-        font-size: .8em;
-    }
-    
-    .splashBody {
-        top: -3vh;
-    }
-
-    #spots {
-        width: 97.3%;
-        padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #welcome {
-        height: 65vh;
-        top: 0;
-    }
-}
-
-@media screen and (max-width: 481px) {
-    #welcomeMsg {
-        font-size: 1em;
-        position: relative;
-        top: 5px;
-        height: fit-content;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.1em;
-    }
-
-    #header {
-        top: 4px;
-    }
-
-    #gm {
-        font-size: .8em;
-    }
-
-    .splashBody {
-       top: 0;
-    }
-
-    #spots {
-        width: 97.3%;
-        padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #welcome {
-        height: 65vh;
-        box-sizing: border-box;
-        top: 0;
-        padding: 20px;
-    }
-}
-
-@media screen and (max-width: 376px) {
-    #welcomeMsg {
-        font-size: .8em;
-        position: relative;
-        box-sizing: border-box;
-        height: fit-content;
-        margin: 1%;
-    }
-
-    #splashH1 {
-        margin-top: 2%;
-        font-size: 1.1em;
-    }
-
-    #header {
-        top: 4px;
-    }
-
-    #gm {
-        font-size: .8em;
-    }
-
-    .splashBody {
-       top: 0;
-    }
-
-    #spots {
-        width: 97.3%;
-        height: fit-content;
-        padding: 1%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 5%;
-    }
-
-    #welcome {
-        height: 65vh;
-        top: 0;
-    }
-}
-
-@media screen and (max-width: 330px) {
-    #welcomeMsg {
-        font-size: .8em;
-        position: relative;
-        top: .2vh;
-        box-sizing: border-box;
-        height: fit-content;
-        margin: 1%;
-    }
-}
-
 

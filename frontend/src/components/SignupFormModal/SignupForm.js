@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 import styles from '../../css-modules/Signup.module.css'
 
-function SignupForm() {
+function SignupForm({setShowModal, setShowLoginModal}) {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -12,22 +13,44 @@ function SignupForm() {
   const [confirmedPassword, setConfirmedPassword] = useState('')
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors([])
-    return dispatch(sessionActions.signUp({ username, email, password, confirmedPassword }))
-        .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-        });
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setErrors([])
+//     return dispatch(sessionActions.signUp({ username, email, password, confirmedPassword }))
+//         .catch(async (res) => {
+//         const data = await res.json();
+//         if (data && data.errors) setErrors(data.errors);
+//         });
     
-  }
+//   }
+
+    useEffect(() => {
+        setShowLoginModal(false)
+    }, [])
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+        if (password === confirmedPassword) {
+        setErrors([]);
+        await dispatch(
+            sessionActions.signUp({ email, username, password, confirmedPassword})
+        ).catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) {
+                setErrors(data.errors);
+            }
+        });
+        } 
+     };
 
  
 
   return (
     <div className={styles.formDiv}>
         <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.btnWrapper}>
+          <button className={styles.closeBtn} onClick={() => setShowModal(false)}><AiFillCloseCircle /></button>
+        </div>
         <h1 className={styles.header}>Create Account!</h1>
         {errors.length ? 
         <div className={styles.errors}>

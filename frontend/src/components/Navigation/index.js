@@ -10,6 +10,8 @@ import styles from '../../css-modules/Nav.module.css'
 
 const Navigation = ({ isLoaded }) => {
     const [showNavMenu, setShowNavMenu] = useState(false)
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showSignupModal, setShowSignupModal] = useState(false);
     const user = useSelector((state) => state.session.user)
     
     let sessionLinks;
@@ -24,8 +26,8 @@ const Navigation = ({ isLoaded }) => {
         sessionLinks = (
             <span className={styles.authSpan}>
                 <div id={styles.authBtns}>
-                    <LoginFormModal />
-                    <SignupFormModal />
+                    <LoginFormModal showModal={showLoginModal} setShowModal={setShowLoginModal} setShowSignupModal={setShowSignupModal} />
+                    <SignupFormModal showModal={showSignupModal} setShowModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} />
                 </div>
             </span>
         )
