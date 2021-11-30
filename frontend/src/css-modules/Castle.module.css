@@ -2,20 +2,19 @@
     grid-area: rootitem;
     position: relative;
     top: 75px;
-    width: 100%;
-    max-width: 997px;
+    width: 70vw;
+    /* max-width: 997px; */
     display: grid;
     grid-template-rows: 10em auto auto auto auto;
-    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
     grid-template-areas:
     '. head head .'
     '. img img . '
     '. ui ui .'
     '. RF RF .'
     '. review review .' ;  
-    margin: auto;
-    margin-top: 2.5%;
-    
+    margin: 50px auto; 
+    margin-bottom: 10%;
     background-color: rgba(22,19,30, 0.2);
     border-radius: 10px;
     height: fit-content;
@@ -42,7 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 736px;
+    /* max-width: 736px; */
     height: fit-content;
 }
 
@@ -54,11 +53,11 @@
     min-width: 400px;
     justify-content: space-between;
     height: 17vh;
+    width: 100%;
     background-color:rgba(22,19,30, 1);
     border: 1px solid #16131E ;
     border-radius: 5px 5px 0 0;
     color: #C1BDBE;
-    width: 100%;
     overflow: auto;
     overflow-x: hidden;
     font-size: .8em;
@@ -120,7 +119,7 @@
 
 .img {
     width: 100%;
-    max-width: 736px;
+    /* max-width: 736px; */
     height: auto;
     border-radius: 20px;
     /* border: 1.7px solid #C1BDBE; */
@@ -155,37 +154,8 @@
     box-shadow: 1px 1px 1rem -2px #1C2F3E ;
 }
 
-/* @media screen and (max-width: 1220px) {
-    #underImgDiv {
-        flex-direction: column;
-    }
-
-    #formWrapper {
-        width: 97.5%;
-        border-radius: 0 0 5px 5px;
-        height: fit-content;
-        flex-direction: row-reverse;
-        margin-bottom: 10px;
-    }
-
-    #formDiv {
-        width: 30%;
-    }
-
-    #info {
-        border-radius: 5px 5px 0 0;
-    }
-    
-} */
-
-/* @media screen and (max-width: 960px) {
+@media screen and (max-height: 900px) {
     #castleContainer {
-        position: relative;
-        height: 77vh;
-        top: 150px;
-        margin: 2%;
-        
+        margin-bottom: 12%;
     }
-
-    
-} */
+}
