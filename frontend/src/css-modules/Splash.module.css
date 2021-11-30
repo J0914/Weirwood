@@ -1,92 +1,110 @@
-@media screen and (min-width: 1900px) and (min-height: 1000px) {
+#splashH1 {
+    position: relative;
+    /* top: 0px; */
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    border-bottom: 1px solid #16131E ;
+    white-space: nowrap;
+}
+
+#gm {
+    width: 100%;
+    text-align: right;
+}
+
+#header {
+    grid-area: head;
+    height: fit-content;
+}
+
+#welcomeMsg {
+    text-align:left;
+    color: #16131E ;
+    font-size: 1.8em;
+    width: 60vw;
+    margin: 2rem;
+    padding: 2rem;
+    height: fit-content;
+    /* background-color:rgba( 206,215,232, 0.5); */
+    border-radius: 5px;
+    box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
+    border: .5px solid rgba(22,19,30s, 0.1)
+
+}
+
+#welcome {
+    grid-area: p;
+    position: relative;
+    /* top: -50px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(22,19,30, 0.2);
+    border-radius: 10px;
+    width: 70vw;
+    height: fit-content;
+    /* max-width: 875px; */
+    box-shadow: .5px .5px 0.625rem -2px #16131E ;
+    border: 1px solid rgba(193,189,190, 0.1)
+
+}
+
+#spots {
     
+    grid-area: spots; 
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: center;
+}
 
-    #splashH1 {
-        position: relative;
-        /* top: 0px; */
-        font-size: 2em;
-        margin-top: 40px;
-        margin-bottom: 0;
-        display: flex;
-        justify-content: center;
-        height: auto;
-        border-bottom: 1px solid #16131E ;
-        white-space: nowrap;
-    }
+.splashBody {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 18vh fit-content;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-areas: 
+    '. head .'
+    '. p .';
+    justify-items: center;
+    /* align-items: center; */
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+}
 
-    #gm {
-        width: 100%;
-        text-align: right;
-    }
-
-    #header {
-        grid-area: head;
-        height: fit-content;
-    }
-
+@media screen and (max-width: 1875px) and (max-height: 1000px) {
     #welcomeMsg {
-        text-align:left;
-        color: #16131E ;
-        font-size: 1.8em;
-        width: 60vw;
-        margin: 2rem;
-        padding: 2rem;
-        height: fit-content;
-        /* background-color:rgba( 206,215,232, 0.5); */
-        border-radius: 5px;
-        box-shadow: .2px .2px 0.3rem -2px #1C2F3E ;
-        border: .5px solid rgba(22,19,30s, 0.1)
-
+        font-size: 1.5em;
     }
-
     #welcome {
-        grid-area: p;
-        position: relative;
-        /* top: -50px; */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(22,19,30, 0.2);
-        border-radius: 10px;
-        width: 70vw;
-        height: fit-content;
-        /* max-width: 875px; */
-        box-shadow: .5px .5px 0.625rem -2px #16131E ;
-        border: 1px solid rgba(193,189,190, 0.1)
-
+        width: 80vw;
     }
-
     #spots {
-        
-        grid-area: spots; 
-        position: relative;
-        width: 60vw;
-        height: 50vh;
-        box-sizing: border-box;
-        padding: 30px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap:nowrap;
-        justify-content: center;
-    }
-
-    .splashBody {
-        display: grid;
-        background-image: linear-gradient(#C1BDBE ,#1C2F3E);
-        box-sizing: border-box;
-        grid-template-rows: 18vh fit-content;
-        grid-template-columns: 1fr 6fr 1fr;
-        grid-template-areas: 
-        '. head .'
-        '. p .';
-        justify-items: center;
-        /* align-items: center; */
-        flex-direction: column;
-        position: absolute;
-        top: 75px;
-        left: 0px;
-        height: 100vh;
-        width: 100vw;
+        width: 80vw;
     }
 }
+
+@media screen and (max-height: 800px) {
+    #welcomeMsg {
+        font-size: 1.2em;
+    }
+    #welcome {
+        margin-bottom: 150px;
+    }
+    
+}
+

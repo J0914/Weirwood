@@ -1,9 +1,9 @@
 footer {
     grid-area: footer;
-    position: fixed;
+    position: relative;
     font-size: 1em;
     z-index: 3;
-    bottom: 0px;
+    bottom: -20px;
     left: 0em;
     right: 0em;
     height: 55px;
@@ -25,15 +25,3 @@ a {
     margin: auto;
 }
 
-@media screen and (max-width: 780px) {
-    
-}
-@media screen and (max-width: 540px) {
-    
-}
-@media screen and (max-width: 450px) {
-    footer {
-        height: 5vh;
-        font-size: .5em;
-    }
-}
