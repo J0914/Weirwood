@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import * as spotsActions from '../../store/spots'
@@ -16,6 +16,10 @@ export default function Castle () {
     const castle = useSelector(state => state.spots.currentCastle)
     let spotId;
     if (castle) spotId = castle.id
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     
     useEffect(() => {
         dispatch(spotsActions.getSingleSpot(id))

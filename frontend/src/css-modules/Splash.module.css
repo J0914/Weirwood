@@ -14,6 +14,7 @@
 #gm {
     width: 100%;
     text-align: right;
+    margin-bottom: 3%;
 }
 
 #header {
@@ -39,7 +40,6 @@
 #welcome {
     grid-area: p;
     position: relative;
-    /* top: -50px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,8 +50,8 @@
     height: fit-content;
     /* max-width: 875px; */
     box-shadow: .5px .5px 0.625rem -2px #16131E ;
-    border: 1px solid rgba(193,189,190, 0.1)
-
+    border: 1px solid rgba(193,189,190, 0.1);
+    margin-bottom: 8%;
 }
 
 #spots {
@@ -78,15 +78,17 @@
     '. p .';
     justify-items: center;
     /* align-items: center; */
+    background-image: linear-gradient(#C1BDBE ,#1C2F3E);
+
     flex-direction: column;
     position: absolute;
     top: 75px;
     left: 0px;
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
 }
 
-@media screen and (max-width: 1875px) and (max-height: 1000px) {
+@media screen and (max-height: 1000px) {
     #welcomeMsg {
         font-size: 1.5em;
     }
@@ -101,9 +103,6 @@
 @media screen and (max-height: 800px) {
     #welcomeMsg {
         font-size: 1.2em;
-    }
-    #welcome {
-        margin-bottom: 150px;
     }
     
 }

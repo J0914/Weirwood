@@ -1,5 +1,5 @@
 .textAreaDiv {
-    width: 95%;
+    width: 100%;
     height: fit-content;
     margin: auto;
     margin-bottom: 30px;
@@ -72,7 +72,7 @@ ul {
 
 #reviewContainer {
     display: grid;
-    margin-top: 3%;
+    margin: 3% 0;
     grid-template-rows: 1fr 4fr;
     grid-template-areas: 
     'head'
@@ -91,6 +91,8 @@ ul {
 
 #body {
     grid-area: body;
+    box-sizing: border-box;
+    padding: 1%;
     width: 100%;
     font-size: .8em;
     margin: 5px;
