@@ -112,10 +112,29 @@
     width: 90%;
     margin: 0 2%;
     padding: 1px;
-    background-color: #C1BDBE;
+    /* background-color: #C1BDBE; */
     border-radius: 4px;
-    box-shadow: .5px .5px 0.625rem -2px #C1BDBE ;
+    /* box-shadow: .5px .5px 0.625rem -2px #C1BDBE ; */
 
+}
+
+.closeBtn {
+    background: none;
+    color: #C1BDBE;
+    font-size: 2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+.closeBtn:hover {
+    color: #1C2F3E
+}
+
+.btnWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
 }
 
 /* @media screen and (max-width: 960px) {

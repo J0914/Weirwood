@@ -13,7 +13,7 @@ const BookingModal = () => {
       <button id={styles.bookingBtn} className={styles.navLink} onClick={() => setShowModal(true)}>Your Bookings</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <Booking />
+          <Booking setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

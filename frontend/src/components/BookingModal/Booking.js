@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as bookingsActions from '../../store/bookings';
 import DeleteBookingModal from '../DeleteBookingModal'
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 import styles from '../../css-modules/BookingModal.module.css'
 
-export default function Booking () {
+export default function Booking ({setShowModal}) {
     const [edit, setEdit] = useState(false)
-    const castle = useSelector(state => state.spots.currentCastle);
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
@@ -17,9 +17,10 @@ export default function Booking () {
     const yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd;
     
-    const [selectedStart, setSelectedStart] = useState(today);
-    const [selectedEnd, setSelectedEnd] = useState(selectedStart);
+    const [selectedStart, setSelectedStart] = useState(null);
+    const [selectedEnd, setSelectedEnd] = useState(null);
     const [errors, setErrors] = useState([]);
+    const [currentEle, setCurrentEle] = useState(null);
     const [isSuccess, setIsSuccess] = useState(false);
     const bookings = useSelector(state => state.bookings.userBookings)
  
@@ -29,12 +30,10 @@ export default function Booking () {
         }
     }, [selectedStart])
 
-    const handleSubmit = (bookingId) => {
+    const handleSubmit = (booking) => {
         setErrors([]);
         
-        const spotId = castle.id;
-        const userId = user.id;
-        dispatch(bookingsActions.editBooking({bookingId, spotId, userId, selectedStart, selectedEnd}))
+        dispatch(bookingsActions.editBooking({bookingId: booking.id, spotId: booking.spotId, userId: booking.userId, start: selectedStart, end: selectedEnd}))
         .catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) {
@@ -43,16 +42,23 @@ export default function Booking () {
                 setIsSuccess(true)
             }
         }) 
+        setCurrentEle(null);
         setEdit(false);
     }
 
-    const handleDelete = () => {
-
+    const handleEdit = (id, start, end) => {
+        setEdit(true);
+        setCurrentEle(id)
+        setSelectedStart(start)
+        setSelectedEnd(end)
     }
     
     
     return (
         <div id={styles.wrapper}>
+            <div className={styles.btnWrapper}>
+                <button className={styles.closeBtn} onClick={() => setShowModal(false)}><AiFillCloseCircle /></button>
+            </div>
             <div id={styles.headerDiv} >
                 <h2 id={styles.header}>Current Bookings</h2>
                 <p className={styles.pHeader}>Check-in is at 11am, payment is due at check-in.</p>
@@ -82,28 +88,9 @@ export default function Booking () {
                         <p className={styles.p}>{booking.Spot.location}</p>
                         <label className={styles.label}>Price:</label>
                         <p className={styles.p}>{booking.Spot.price} gold dragons</p>
-                        {!edit ?
+                        {edit && currentEle === booking.id?
                         <>
-                        <div id={styles.datesContainer}>
-                            <div className={styles.dateDivs}>
-                                <label className={styles.label}>Check-in Date:</label>
-                                <p className={styles.p}>{booking.start}</p>
-                            </div>
-                            <div className={styles.dateDivs}>
-                                <label className={styles.label}>Check-out Date:</label>
-                                <p className={styles.p}>{booking.end}</p>
-                            </div>
-                        </div>
-                        <div id={styles.deleteDiv}>   
-                            <button
-                                onClick={() => setEdit(true)}
-                                id={styles.delete}>
-                                Edit</button>                   
-                            <DeleteBookingModal bookingId={booking.id}/>    
-                        </div> 
-                        </>
-                        :
-                        <>
+                        {console.log(booking)}
                         <div id={styles.datesContainer}>
                             <div className={styles.dateDivs}>
                                 <label className={styles.label}>Check-in Date:</label>
@@ -131,10 +118,34 @@ export default function Booking () {
                             <div id={styles.deleteDiv}>   
                                 <button 
                                 id={styles.delete} 
-                                onClick={() => handleSubmit(booking.id)}
+                                onClick={() => handleSubmit(booking)}
                                 >Book!</button>                   
+                                <button 
+                                id={styles.delete} 
+                                onClick={() => setEdit(false)}
+                                >Cancel</button>                   
                                 <DeleteBookingModal bookingId={booking.id}/>  
                             </div> 
+                        </>
+                        :
+                        <>
+                        <div id={styles.datesContainer}>
+                            <div className={styles.dateDivs}>
+                                <label className={styles.label}>Check-in Date:</label>
+                                <p className={styles.p}>{booking.start}</p>
+                            </div>
+                            <div className={styles.dateDivs}>
+                                <label className={styles.label}>Check-out Date:</label>
+                                <p className={styles.p}>{booking.end}</p>
+                            </div>
+                        </div>
+                        <div id={styles.deleteDiv}>   
+                            <button
+                                onClick={() => handleEdit(booking.id, booking.start, booking.end)}
+                                id={styles.delete}>
+                                Edit</button>                   
+                            <DeleteBookingModal bookingId={booking.id}/>    
+                        </div> 
                         </>
                         }
                         
